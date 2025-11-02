@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerMoveScript : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    private float moveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
 
     public float groundDrag;
 
@@ -14,6 +16,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -29,6 +32,15 @@ public class PlayerMoveScript : MonoBehaviour
 
     Rigidbody rb;
 
+    public MovementState movementState;
+
+    public enum MovementState
+    {
+        walking,
+        sprinting,
+        air
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,6 +54,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         MyInput();
         SpeedControl();
+        StateHandler();
 
         // handle drag
         if (grounded)
@@ -69,6 +82,26 @@ public class PlayerMoveScript : MonoBehaviour
         }
     }
 
+    private void StateHandler()
+    {
+        // mode - sprinting
+        if (grounded && Input.GetKey(sprintKey))
+        {
+            movementState = MovementState.sprinting;
+            moveSpeed = sprintSpeed;
+        }
+        // mode - walking
+        else if (grounded)
+        {
+            movementState = MovementState.walking;
+            moveSpeed = walkSpeed;
+        }
+        // mode - air
+        else
+        {
+            movementState = MovementState.air;
+        }
+    }
     private void MovePlayer()
     {
         // calculate movement direction
