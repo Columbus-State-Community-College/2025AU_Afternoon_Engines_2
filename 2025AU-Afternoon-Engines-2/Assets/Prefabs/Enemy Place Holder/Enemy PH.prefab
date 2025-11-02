@@ -125,8 +125,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   detectionRange: 100
-  chaseSpeed: 6
+  chaseSpeed: 3
   idleSpeed: 5
+  bounceForce: 2
+  disableTime: 0.5
+  logInterval: 60
 --- !u!195 &6027629398202905217
 NavMeshAgent:
   m_ObjectHideFlags: 0

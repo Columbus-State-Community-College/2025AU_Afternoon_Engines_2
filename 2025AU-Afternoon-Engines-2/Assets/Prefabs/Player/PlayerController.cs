@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMoveScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     private float moveSpeed;
