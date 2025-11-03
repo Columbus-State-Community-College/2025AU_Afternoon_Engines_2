@@ -87,9 +87,6 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator SmallPushBack(Vector3 direction)
     {
-        // Temporarily disable NavMeshAgent for smooth push
-        agent.enabled = false;
-
         // Small step back instead of flying
         float pushDistance = 1.5f;   // how far to move back
         float pushSpeed = 5f;        // how fast to slide back
@@ -108,6 +105,5 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(disableTime);
         agent.enabled = true;
     }
-
 
 }

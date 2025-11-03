@@ -138,8 +138,9 @@ GameObject:
   - component: {fileID: 6327116876849200421}
   - component: {fileID: 6742650623933706817}
   - component: {fileID: 4211754138836561908}
+  - component: {fileID: -8092546367345347850}
   m_Layer: 0
-  m_Name: New emeny PH
+  m_Name: Base Enemy PH
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,12 +238,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  detectionRange: 15
-  chaseSpeed: 3.5
+  detectionRange: 100
+  chaseSpeed: 2
   idleSpeed: 0
   bounceForce: 2
   disableTime: 0.5
   logInterval: 60
+--- !u!114 &-8092546367345347850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810067333466635399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe5e665c872b28429a3610fa254b6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8314569133520565122
 GameObject:
   m_ObjectHideFlags: 0
