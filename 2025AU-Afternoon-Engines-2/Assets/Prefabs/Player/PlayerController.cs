@@ -47,8 +47,11 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
 
         //add by thomas for testing the Score/Score system system need the Cursor
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+ 
+
+
     }
 
     private void Update()
