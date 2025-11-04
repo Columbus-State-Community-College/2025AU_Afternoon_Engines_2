@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 6742650623933706817}
   - component: {fileID: 4211754138836561908}
   - component: {fileID: -8092546367345347850}
+  - component: {fileID: -5503469059870392187}
   m_Layer: 0
   m_Name: Base Enemy PH
   m_TagString: Enemy
@@ -256,6 +257,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe5e665c872b28429a3610fa254b6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5503469059870392187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810067333466635399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f13d50b7d2df99408473d47053d12ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsForHit: 10
+  pointsForKill: 50
+  isHead: 0
+  parentZombie: {fileID: 6016282661877011406}
 --- !u!1 &8314569133520565122
 GameObject:
   m_ObjectHideFlags: 0

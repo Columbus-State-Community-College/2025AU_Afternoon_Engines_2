@@ -23,7 +23,7 @@ public class GunScriptBase : MonoBehaviour
 
     void Start()
     {
-        
+        SetText();
     }
 
     void Update()
