@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     }
     
     private void OnCollisionEnter (Collision collision) {
-        if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Ground"))
             Destroy(gameObject);
     }
 }
