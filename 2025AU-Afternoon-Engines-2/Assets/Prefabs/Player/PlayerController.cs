@@ -46,12 +46,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        //add by thomas for testing the Score/Score system system need the Cursor
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
- 
-
-
+        Cursor.visible = false;
     }
 
     private void Update()
