@@ -15,23 +15,21 @@ public class EnemyAI : MonoBehaviour
     public float idleSpeed = 0f;
 
     [Header("Bounce Settings")]
-    public float bounceForce = 2f;          // how hard to bounce 
-    public float disableTime = 0.5f;        // how long to pause NavMeshAgent on touch
+    public float bounceForce = 2f;
+    public float disableTime = 0.5f;
 
     [Header("Debug Settings")]
-    public float logInterval = 60f; // seconds between logs
+    public float logInterval = 60f;
 
     private NavMeshAgent agent;
     private Rigidbody rb;
-    private float logTimer = 0f; // time between logs
-
+    private float logTimer = 0f;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = idleSpeed;
 
-        // Find player by tag
         GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
         if (playerObject != null)
         {
@@ -50,7 +48,6 @@ public class EnemyAI : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, player.position);
 
-        // Only log once every "logInterval" seconds
         logTimer += Time.deltaTime;
         if (logTimer >= logInterval)
         {
@@ -58,21 +55,26 @@ public class EnemyAI : MonoBehaviour
             logTimer = 0f;
         }
 
-        // If player is within detection range, chase
+        if (!agent.enabled || !agent.isOnNavMesh)
+            return;
+
         if (distance <= detectionRange)
         {
             agent.speed = chaseSpeed;
-            agent.SetDestination(player.position);
+
+            if (agent.enabled && agent.isOnNavMesh)
+            {
+                agent.SetDestination(player.position);
+            }
         }
         else
         {
-            if (agent.isOnNavMesh)
+            if (agent.enabled && agent.isOnNavMesh)
                 agent.ResetPath();
 
             agent.speed = idleSpeed;
         }
     }
-
 
     // === Bounce behavior when colliding with player ===
     private void OnCollisionEnter(Collision collision)
@@ -80,6 +82,8 @@ public class EnemyAI : MonoBehaviour
         if (collision.gameObject.CompareTag(playerTag))
         {
             Vector3 bounceDir = (transform.position - collision.transform.position).normalized;
+            agent.enabled = false;
+
             StartCoroutine(SmallPushBack(bounceDir));
             Debug.Log("[EnemyAI] Light pushback from player!");
         }
@@ -87,9 +91,8 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator SmallPushBack(Vector3 direction)
     {
-        // Small step back instead of flying
-        float pushDistance = 1.5f;   // how far to move back
-        float pushSpeed = 5f;        // how fast to slide back
+        float pushDistance = 1.5f;
+        float pushSpeed = 5f;
 
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + (direction * pushDistance);
@@ -103,7 +106,9 @@ public class EnemyAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(disableTime);
-        agent.enabled = true;
-    }
 
+        //  re-enable AI NavMeshAgent 
+        if (agent != null)
+            agent.enabled = true;
+    }
 }

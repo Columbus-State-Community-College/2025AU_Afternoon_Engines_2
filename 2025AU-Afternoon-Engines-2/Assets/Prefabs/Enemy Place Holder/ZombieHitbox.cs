@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.AI;   
+using System.Collections;
 
 public class ZombieHitbox : MonoBehaviour
 {
@@ -8,42 +10,53 @@ public class ZombieHitbox : MonoBehaviour
     public bool isHead = false;
 
     [Header("References")]
-    public ZombieHealth parentZombie; // assign in Inspector
+    public ZombieHealth parentZombie; // assign in inspector
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        HandleHit(collision.gameObject);
-    }
+    [Header("Hit Reaction")]
+    public float knockbackForce = 3f;   // tweak this in inspector
 
     private void OnTriggerEnter(Collider other)
     {
-        HandleHit(other.gameObject);
+        if (!other.CompareTag("Bullet")) return;
+
+        Bullet bullet = other.GetComponent<Bullet>();
+        int damageAmount = bullet != null ? (int)bullet.damage : 20;
+
+        ApplyDamage(damageAmount);
+        ApplyKnockback(other.transform);
+
+        Destroy(other.gameObject);
     }
 
-    private void HandleHit(GameObject obj)
+    private void ApplyKnockback(Transform bullet)
     {
-        // Check for bullet collision
-        if (obj.CompareTag("Bullet"))
-        {
-            // Try to get Bullet script
-            Bullet bullet = obj.GetComponent<Bullet>();
+        Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
+        NavMeshAgent agent = parentZombie.GetComponent<NavMeshAgent>();
 
-            if (bullet != null)
-            {
-                ApplyDamage((int)bullet.damage, "[Bullet]");
-            }
-            else
-            {
-                Debug.LogWarning("[ZombieHitbox] Bullet hit, but no Bullet script found!");
-                ApplyDamage(20, "[Unknown Projectile]");
-            }
+        if (rb == null) return;
 
-            // Destroy bullet after hit (safe cleanup)
-            Destroy(obj);
-        }
+        // Temporarily disable AI so physics can push it
+        if (agent != null)
+            agent.enabled = false;
+
+        Vector3 direction = (parentZombie.transform.position - bullet.position).normalized;
+        direction.y = 0;
+
+        rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
+
+        // Re-enable AI after short delay
+        StartCoroutine(ReenableAgent(agent));
     }
 
-    private void ApplyDamage(int damage, string source)
+    private IEnumerator ReenableAgent(NavMeshAgent agent)
+    {
+        if (agent == null) yield break;
+
+        yield return new WaitForSeconds(0.1f); // small pause
+        agent.enabled = true;
+    }
+
+    private void ApplyDamage(int damage)
     {
         parentZombie.TakeDamage(damage);
 
@@ -51,10 +64,8 @@ public class ZombieHitbox : MonoBehaviour
         ScoreManager.instance.AddPoints(points);
 
         if (parentZombie.IsDead())
-        {
             ScoreManager.instance.AddPoints(pointsForKill);
-        }
 
-        Debug.Log($"[ZombieHitbox] {source} → {(isHead ? "Head" : "Body")} hit for {damage} dmg.");
+        Debug.Log($"[ZombieHitbox] {(isHead ? "HEAD" : "BODY")} hit → {damage} damage");
     }
 }
