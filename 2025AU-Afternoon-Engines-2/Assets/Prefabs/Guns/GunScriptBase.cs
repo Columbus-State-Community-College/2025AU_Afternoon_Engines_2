@@ -29,7 +29,7 @@ public class GunScriptBase : MonoBehaviour
     void Update()
     { 
         
-        if (Input.GetButtonUp ("Fire1")) { //fires the gun, with a certain accuracy.
+        if (Input.GetMouseButtonUp (0)) { //fires the gun, with a certain accuracy.
             if (magazine > 0 && !isReloading) {
                 gunshot.Play();
                 float horizontalSpread = Random.Range(-accuracy, accuracy);
