@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy head PH
       objectReference: {fileID: 0}
+    - target: {fileID: 7257869808452187587, guid: 6efec870a7be269469b438e8944251f4, type: 3}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8125640345110515604, guid: 6efec870a7be269469b438e8944251f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

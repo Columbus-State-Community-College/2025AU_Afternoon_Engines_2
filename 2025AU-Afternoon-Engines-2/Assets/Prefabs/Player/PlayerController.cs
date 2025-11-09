@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +26,14 @@ public class PlayerController : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
+
+    [Header("Stamina")]
+    public Image staminaBar;
+    public float stamina;
+    public float maxStamina;
+    public float runCost;
+    public float chargeRate;
+    private Coroutine recharge;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -76,6 +86,19 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 0;
     }
 
+    private IEnumerator rechargeStamina()
+    {
+        yield return new WaitForSeconds(1f);
+
+        while (stamina < maxStamina)
+        {
+            stamina += chargeRate / 10f;
+            if (stamina > maxStamina) stamina = maxStamina;
+            staminaBar.fillAmount = stamina / maxStamina;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
     private void FixedUpdate()
     {
         MovePlayer();
@@ -118,10 +141,25 @@ public class PlayerController : MonoBehaviour
         }
 
         // mode - sprinting
-        else if (grounded && Input.GetKey(sprintKey))
+        else if (Input.GetKey(sprintKey) && stamina > 0)
         {
             movementState = MovementState.sprinting;
             moveSpeed = sprintSpeed;
+
+            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            {
+                stamina -= runCost * Time.deltaTime;
+                if (stamina < 0)
+                {
+                    stamina = 0;
+                    movementState = MovementState.walking;
+                    moveSpeed = walkSpeed;
+                }
+            }
+            staminaBar.fillAmount = stamina / maxStamina;
+
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(rechargeStamina());
         }
         // mode - walking
         else if (grounded)
