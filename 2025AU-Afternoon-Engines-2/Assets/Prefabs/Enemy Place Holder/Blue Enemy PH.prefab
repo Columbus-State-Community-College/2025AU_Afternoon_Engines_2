@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6165746842159320749
+--- !u!1001 &6202367746850685200
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,29 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 173917486677302179, guid: 33a90aa2c42463845b038908afea2370, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 4adfa3f3d6c611040b3997480dd56a2a, type: 2}
     - target: {fileID: 2810067333466635399, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: m_Name
-      value: Red Enemy PH
+      value: Base Enemy PH Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3404043810077128339, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4ba85de6294a76944af0fba8c8a37051, type: 2}
+      objectReference: {fileID: 2100000, guid: 6f57d687a77b2d64eafcfb2874f57e1b, type: 2}
     - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.538328
+      value: 3.5429358
       objectReference: {fileID: 0}
     - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21991444
+      value: 0.1026119
       objectReference: {fileID: 0}
     - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.644184
+      value: -19.504498
       objectReference: {fileID: 0}
     - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
       propertyPath: m_LocalRotation.w

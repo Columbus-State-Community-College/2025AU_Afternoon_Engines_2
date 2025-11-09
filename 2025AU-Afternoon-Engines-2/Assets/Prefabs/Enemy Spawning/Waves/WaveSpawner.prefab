@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1183643461735671463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.899, y: -0.9, z: -26.58}
+  m_LocalPosition: {x: 0.899, y: -0.756, z: -25.307}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 1953537195138793904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.525, y: -0.9, z: -3.455}
+  m_LocalPosition: {x: -27.416, y: -0.823, z: -3.455}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,5 +389,12 @@ MonoBehaviour:
     - {fileID: 6494293886366923867, guid: 2544c8ba35652a74e890975f1a457445, type: 3}
     - {fileID: 6494293886366923867, guid: 2544c8ba35652a74e890975f1a457445, type: 3}
     timeToNextEnemy: 1
-    timeToNextWave: 5
+    timeToNextWave: 10
+    enemiesLeft: 0
+  - enemies:
+    - {fileID: 6458798958874506214, guid: 96ae539369d84c24d854f25cad02ec43, type: 3}
+    - {fileID: 6458798958874506214, guid: 96ae539369d84c24d854f25cad02ec43, type: 3}
+    - {fileID: 6458798958874506214, guid: 96ae539369d84c24d854f25cad02ec43, type: 3}
+    timeToNextEnemy: 1
+    timeToNextWave: 15
     enemiesLeft: 0
