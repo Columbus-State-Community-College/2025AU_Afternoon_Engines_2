@@ -737,6 +737,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921138632}
   m_CullTransparentMesh: 1
+--- !u!1001 &1087511865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2810067333466635399, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_Name
+      value: Base Enemy PH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.405588
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21991348
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35231137
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607502679710884220, guid: 33a90aa2c42463845b038908afea2370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33a90aa2c42463845b038908afea2370, type: 3}
 --- !u!1 &1187154776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,14 +1466,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: sensX
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: sensY
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 1398477441855031270, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.46
@@ -1456,22 +1505,6 @@ PrefabInstance:
     - target: {fileID: 1398477441855031270, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647686605768369472, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: runCost
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647686605768369472, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: stamina
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647686605768369472, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: chargeRate
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647686605768369472, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: maxStamina
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3647686605768369472, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: staminaBar
@@ -1611,3 +1644,4 @@ SceneRoots:
   - {fileID: 3804522005360017737}
   - {fileID: 2038874846}
   - {fileID: 1731288159985174308}
+  - {fileID: 1087511865}
