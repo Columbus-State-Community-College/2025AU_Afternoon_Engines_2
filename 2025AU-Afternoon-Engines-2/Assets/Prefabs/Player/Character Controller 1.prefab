@@ -173,6 +173,11 @@ MonoBehaviour:
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
+  staminaBar: {fileID: 0}
+  stamina: 100
+  maxStamina: 100
+  runCost: 15
+  chargeRate: 25
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -506,8 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57aa1cd44c9c0c145aebb2caa5b44eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 600
-  sensY: 600
+  sensX: 400
+  sensY: 400
   orientation: {fileID: 7543631034952347039}
 --- !u!1 &7765691556921264948
 GameObject:
