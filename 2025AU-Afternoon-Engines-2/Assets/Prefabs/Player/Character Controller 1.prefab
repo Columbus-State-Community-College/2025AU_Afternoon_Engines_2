@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010148130802484920}
   - component: {fileID: 8508667926918522470}
+  - component: {fileID: 1574364265194603669}
   m_Layer: 0
   m_Name: PlayerGun
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   reload: {fileID: 0}
   gunshotEmpty: {fileID: 0}
   ammoTex: {fileID: 0}
+--- !u!114 &1574364265194603669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374103553360055735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be6c40105abf8647ad2a6ad31533985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1844421988744476238
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +111,7 @@ GameObject:
   - component: {fileID: 167999256030053268}
   - component: {fileID: 6547862556507902135}
   - component: {fileID: 3647686605768369472}
+  - component: {fileID: 1228300428342029311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -184,6 +198,21 @@ MonoBehaviour:
     m_Bits: 1024
   orientation: {fileID: 7543631034952347039}
   movementState: 0
+--- !u!114 &1228300428342029311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860627930549308346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a971a5539819bc342a216df62791b5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 7690680955836816303}
+  parent: {fileID: 2860627930549308346}
+  healthTex: {fileID: 0}
 --- !u!1 &3044543774229367766
 GameObject:
   m_ObjectHideFlags: 0
