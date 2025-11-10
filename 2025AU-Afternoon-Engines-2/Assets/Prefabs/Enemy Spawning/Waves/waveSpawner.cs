@@ -49,7 +49,14 @@ public class waveSpawner : MonoBehaviour
             }
 
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(currentWave.enemies[i], spawnPoint.position, spawnPoint.rotation);
+
+            // spawn enemy
+            Enemy newEnemy = Instantiate(currentWave.enemies[i], spawnPoint.position, spawnPoint.rotation);
+
+            // play zombie sound
+            ZombieSound zs = newEnemy.GetComponent<ZombieSound>();
+            if (zs != null)
+                zs.PlayMoanLoop();
 
             yield return new WaitForSeconds(currentWave.timeToNextEnemy);
         }
