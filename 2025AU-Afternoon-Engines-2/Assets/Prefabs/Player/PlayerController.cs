@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        rb.AddForce(moveDirection.normalized * moveSpeed * PerkChecker.MovementPerkSpeed * 10f, ForceMode.Force);
 
         // if on ground
         if (grounded)

@@ -201,6 +201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy body PH
       objectReference: {fileID: 0}
+    - target: {fileID: 4006836770313505746, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7098913250239914068, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: parentZombie
       value: 

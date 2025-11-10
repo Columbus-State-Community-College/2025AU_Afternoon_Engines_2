@@ -8,7 +8,7 @@ public class GunScriptBase : MonoBehaviour
     public float magazine = 7; // How much ammo the magazine starts with.
     public float magazineSize = 7; // The maximum amount of ammo that can be reloaded into the gun
     public float reserve = 50; // The ammo that gets reloaded from the gun.
-    
+
     private bool isReloading = false; 
     public float reloadTime = 2.3f; 
     public float accuracy = 1.0f; 
@@ -17,7 +17,6 @@ public class GunScriptBase : MonoBehaviour
     public AudioSource gunshot;
     public AudioSource reload;
     public AudioSource gunshotEmpty;
-
     public TextMeshProUGUI ammoTex;
    
 
@@ -50,13 +49,21 @@ public class GunScriptBase : MonoBehaviour
                 StartCoroutine(Reload());
             }
         }
+        
     }
     
     IEnumerator Reload() //reloads the gun. all of this is literally just so I can make the reload take time.
     {
         isReloading = true;
         reload.Play();
-        yield return new WaitForSeconds(reloadTime); 
+        if (PerkChecker.hasSpeedReload) {
+            reload.pitch = 2f;
+            yield return new WaitForSeconds(reloadTime / 2); 
+        }
+        else {
+            reload.pitch = 1f;
+            yield return new WaitForSeconds(reloadTime); 
+        }
         
         float ammoNeeded = magazineSize - magazine;
         float ammoToTransfer = Mathf.Min(ammoNeeded, reserve);
