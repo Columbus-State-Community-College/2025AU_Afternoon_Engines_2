@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieHealth : MonoBehaviour
 {
@@ -31,7 +32,23 @@ public class ZombieHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log($"[ZombieHealth] {gameObject.name} died!");
-        // Play death animation or sound here later
-        Destroy(gameObject, 2f); // temp for testing
+
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
+
+        // stop any zombie sounds
+        ZombieSound zs = GetComponent<ZombieSound>();
+        if (zs != null)
+        {
+            zs.StopMoan();
+        }
+
+        // play death SFX if we add one
+        //SoundManager.instance?.PlaySFX("Zombie death SFX name goes here");
+
+        Destroy(gameObject, 2f); // delay allows sound to play
     }
 }
