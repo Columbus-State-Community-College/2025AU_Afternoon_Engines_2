@@ -2470,220 +2470,120 @@ PrefabInstance:
       value: sound system
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 65195e33fd58a294788a0dfc44b26e51, type: 3}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[0].name
-      value: ambience 1
+      value: Ambience1
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 972004c8a58b10043a96e0152736d21e, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[1].name
-      value: ambience 3
+      value: Ambience3
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a154f7a4ab2d0f94aa5a72b2046da0cf, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[2].name
-      value: ominous ambience 1
+      value: OminousAmbience1
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: d9f8d6d4f3f5a3a44b1cee88674eee44, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[3].name
-      value: ominous ambience 2
+      value: OminousAmbience2
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e6547d71037f61148a0320a40c3681a0, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[4].name
-      value: ominous ambience 3
+      value: OminousAmbience3
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 53ec34e4fb3e816458f6823540ad8990, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[5].name
-      value: ominous ambience 4
+      value: OminousAmbience4
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0da3e030968e77d4cb0743796412a16d, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[6].name
-      value: ominous ambience 5
+      value: OminousAmbience5
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: eaf6526c6a982b44196a41c2038cf9c6, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[7].name
-      value: ominous Music 1
+      value: OminousMusic1
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9e31e996e68d4dc48b76c50c1e35d4fe, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[8].name
-      value: ominous Music 2
+      value: OminousMusic2
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7366cb2d960c7ac4f8bad320222b7182, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[9].name
-      value: ominous Music 3
+      value: OminousMusic3
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[10].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: bc2a8b3b7f035124691193e1494f1241, type: 3}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[10].name
-      value: ominous Music 4
+      value: OminousMusic4
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[11].clip
       value: 
-      objectReference: {fileID: 8300000, guid: bc2a8b3b7f035124691193e1494f1241, type: 3}
+      objectReference: {fileID: 8300000, guid: f255b5b7f8d57dc47b010597b8f5e58a, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[11].name
-      value: ominous Music 4
+      value: OminousMusic5
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[12].clip
       value: 
-      objectReference: {fileID: 8300000, guid: e4c21d7a83668dc49b0ee4dcf7025cb2, type: 3}
+      objectReference: {fileID: 8300000, guid: ce0dc6db05c62504e82969950b68338f, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[12].name
-      value: Tense 2
+      value: Tense1
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[13].clip
       value: 
-      objectReference: {fileID: 8300000, guid: ce0dc6db05c62504e82969950b68338f, type: 3}
+      objectReference: {fileID: 8300000, guid: e4c21d7a83668dc49b0ee4dcf7025cb2, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[13].name
-      value: Tense 1
+      value: Tense2
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[14].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 84a233d5690ba9e42b9844b05c17571e, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[14].name
-      value: Maybe 1
+      value: Maybe1
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[15].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 56201eeff8d69444885e2d7c2e9e4650, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[15].name
-      value: Maybe 2
+      value: Maybe2
       objectReference: {fileID: 0}
-    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: musicTracks.Array.data[16].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 30fc089ec87ed644d9b99d546de56618, type: 3}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[16].name
-      value: Maybe 3
+      value: Maybe3
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: dbcb697bfd6ed48448ae1e03547caa0c, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[0].name
       value: Siren
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9afd1f1e84635a5428557a5b37ede9a7, type: 3}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[1].name
-      value: playerScream
+      value: PlayerScream
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e7aec96c4890e6e4dadfd94d3026e0e8, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[2].name
-      value: Zombie 1
+      value: Zombie1
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9edc72cf76a7ba942b093ee2c00573c5, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[3].name
-      value: Zombie 2
+      value: Zombie2
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b228a36157924f741ae0248fe709b6de, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[4].name
-      value: Zombie 3
+      value: Zombie3
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8be5a0abeae77754d9cfa881910b4d3a, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[5].name
-      value: FootSteps metal
+      value: FootStepsMetal
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e9f6b282ad11cc34b8eb081e3b1cf732, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[6].name
-      value: FootSteps Fast
+      value: FootStepsFast
       objectReference: {fileID: 0}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1554a39c4c482cf4288228abdfd78c3a, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[7].name
-      value: FootSteps Concrete/Stone
+      value: FootStepsConcrete/Stone
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8adbf3e3480a92845b52be1d0f696ec2, type: 3}
-    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[8].name
-      value: FootSteps Slow
+      value: FootStepsSlow
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2764,6 +2664,67 @@ Transform:
   - {fileID: 524484375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &389827918241696038
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 146459209660467203, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_Name
+      value: SceneMusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 942271808518208262, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: musicTrackName
+      value: OminousMusic2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1547174
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3687849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.131727
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718701026241167932, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac4e5887f3f69c84ab11ad14111379fa, type: 3}
 --- !u!1001 &1731288159985174308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3070,3 +3031,4 @@ SceneRoots:
   - {fileID: 3804522005360017737}
   - {fileID: 1731288159985174308}
   - {fileID: 2032725269}
+  - {fileID: 389827918241696038}

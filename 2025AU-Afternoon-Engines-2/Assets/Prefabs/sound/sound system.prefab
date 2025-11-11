@@ -191,7 +191,41 @@ MonoBehaviour:
   musicSource: {fileID: 1714569236214847267}
   musicVolume: 1
   muteMusic: 0
-  musicTracks: []
+  musicTracks:
+  - name: ambience 1
+    clip: {fileID: 8300000, guid: 65195e33fd58a294788a0dfc44b26e51, type: 3}
+  - name: ambience 3
+    clip: {fileID: 8300000, guid: 972004c8a58b10043a96e0152736d21e, type: 3}
+  - name: ominous ambience 1
+    clip: {fileID: 8300000, guid: a154f7a4ab2d0f94aa5a72b2046da0cf, type: 3}
+  - name: ominous ambience 2
+    clip: {fileID: 8300000, guid: d9f8d6d4f3f5a3a44b1cee88674eee44, type: 3}
+  - name: ominous ambience 3
+    clip: {fileID: 8300000, guid: e6547d71037f61148a0320a40c3681a0, type: 3}
+  - name: ominous ambience 4
+    clip: {fileID: 8300000, guid: 53ec34e4fb3e816458f6823540ad8990, type: 3}
+  - name: ominous ambience 5
+    clip: {fileID: 8300000, guid: 0da3e030968e77d4cb0743796412a16d, type: 3}
+  - name: ominous Music 1
+    clip: {fileID: 8300000, guid: eaf6526c6a982b44196a41c2038cf9c6, type: 3}
+  - name: ominous Music 2
+    clip: {fileID: 8300000, guid: 9e31e996e68d4dc48b76c50c1e35d4fe, type: 3}
+  - name: ominous Music 3
+    clip: {fileID: 8300000, guid: 7366cb2d960c7ac4f8bad320222b7182, type: 3}
+  - name: ominous Music 4
+    clip: {fileID: 8300000, guid: bc2a8b3b7f035124691193e1494f1241, type: 3}
+  - name: ominous Music 4
+    clip: {fileID: 8300000, guid: bc2a8b3b7f035124691193e1494f1241, type: 3}
+  - name: Tense 2
+    clip: {fileID: 8300000, guid: e4c21d7a83668dc49b0ee4dcf7025cb2, type: 3}
+  - name: Tense 1
+    clip: {fileID: 8300000, guid: ce0dc6db05c62504e82969950b68338f, type: 3}
+  - name: Maybe 1
+    clip: {fileID: 8300000, guid: 84a233d5690ba9e42b9844b05c17571e, type: 3}
+  - name: Maybe 2
+    clip: {fileID: 8300000, guid: 56201eeff8d69444885e2d7c2e9e4650, type: 3}
+  - name: Maybe 3
+    clip: {fileID: 8300000, guid: 30fc089ec87ed644d9b99d546de56618, type: 3}
 --- !u!1 &6753710119664301065
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,9 +368,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4859f589e3036274c86ac3fbdd71d325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxSource: {fileID: 0}
+  sfxSource: {fileID: 5718552470879087026}
   sfxVolume: 1
   muteSFX: 0
   sfxClips:
-  - name: 
-    clip: {fileID: 0}
+  - name: Siren
+    clip: {fileID: 8300000, guid: dbcb697bfd6ed48448ae1e03547caa0c, type: 3}
+  - name: playerScream
+    clip: {fileID: 8300000, guid: 9afd1f1e84635a5428557a5b37ede9a7, type: 3}
+  - name: Zombie 1
+    clip: {fileID: 8300000, guid: e7aec96c4890e6e4dadfd94d3026e0e8, type: 3}
+  - name: Zombie 2
+    clip: {fileID: 8300000, guid: 9edc72cf76a7ba942b093ee2c00573c5, type: 3}
+  - name: Zombie 3
+    clip: {fileID: 8300000, guid: b228a36157924f741ae0248fe709b6de, type: 3}
+  - name: FootSteps metal
+    clip: {fileID: 8300000, guid: 8be5a0abeae77754d9cfa881910b4d3a, type: 3}
+  - name: FootSteps Fast
+    clip: {fileID: 8300000, guid: e9f6b282ad11cc34b8eb081e3b1cf732, type: 3}
+  - name: FootSteps Concrete/Stone
+    clip: {fileID: 8300000, guid: 1554a39c4c482cf4288228abdfd78c3a, type: 3}
+  - name: FootSteps Slow
+    clip: {fileID: 8300000, guid: 8adbf3e3480a92845b52be1d0f696ec2, type: 3}
