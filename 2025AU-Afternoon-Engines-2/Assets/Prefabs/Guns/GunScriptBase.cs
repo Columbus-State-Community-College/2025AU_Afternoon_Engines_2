@@ -9,7 +9,7 @@ public class GunScriptBase : MonoBehaviour
     public float magazineSize = 7; // The maximum amount of ammo that can be reloaded into the gun
     public float reserve = 50; // The ammo that gets reloaded from the gun.
 
-    private bool isReloading = false; 
+    public static bool isReloading = false; 
     public float reloadTime = 2.3f; 
     public float accuracy = 1.0f; 
     public float bulletForce = 1500f; 
@@ -18,10 +18,12 @@ public class GunScriptBase : MonoBehaviour
     public AudioSource reload;
     public AudioSource gunshotEmpty;
     public TextMeshProUGUI ammoTex;
-   
+
+    public ParticleSystem muzzleFlash;
 
     void Start()
     {
+        
         SetText();
     }
 
@@ -31,6 +33,7 @@ public class GunScriptBase : MonoBehaviour
         if (Input.GetMouseButtonUp (0)) { //fires the gun, with a certain accuracy.
             if (magazine > 0 && !isReloading) {
                 gunshot.Play();
+                muzzleFlash.Play();
                 float horizontalSpread = Random.Range(-accuracy, accuracy);
                 float verticalSpread = Random.Range(-accuracy, accuracy);
                 Quaternion bulletRotation = transform.rotation * Quaternion.Euler(verticalSpread, horizontalSpread, 0);
