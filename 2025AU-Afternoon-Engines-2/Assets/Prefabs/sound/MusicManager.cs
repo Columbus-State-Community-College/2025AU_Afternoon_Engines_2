@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+
 
 public class MusicManager : MonoBehaviour
 {
@@ -72,4 +74,21 @@ public class MusicManager : MonoBehaviour
     {
         musicSource.volume = muteMusic ? 0 : musicVolume;
     }
+
+    public IEnumerator FadeInMusic(string name, float fadeTime = 1.5f)
+    {
+        PlayMusic(name);
+        musicSource.volume = 0f;
+
+        float t = 0f;
+        while (t < fadeTime)
+        {
+            musicSource.volume = Mathf.Lerp(0f, musicVolume, t / fadeTime);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        musicSource.volume = musicVolume;
+    }
+
 }
