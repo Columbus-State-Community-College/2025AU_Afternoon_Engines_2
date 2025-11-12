@@ -50,12 +50,23 @@ public class ZombieHitbox : MonoBehaviour
 
     private void ApplyDamage(int damage)
     {
+        bool wasDead = parentZombie.IsDead();
         parentZombie.TakeDamage(damage);
 
         // play hit sound
         ZombieSound zs = parentZombie.GetComponent<ZombieSound>();
         if (zs != null)
             zs.PlayHitSound();
+
+        if (parentZombie.IsDead() && !wasDead)
+        {
+            ScoreManager.instance.AddPoints(pointsForKill);
+        }
+
+        else if (!parentZombie.IsDead() && !wasDead)
+        {
+            ScoreManager.instance.AddPoints(pointsForHit);
+        }
 
         // if zombie is dead, stop looping sound
         if (parentZombie.IsDead())
