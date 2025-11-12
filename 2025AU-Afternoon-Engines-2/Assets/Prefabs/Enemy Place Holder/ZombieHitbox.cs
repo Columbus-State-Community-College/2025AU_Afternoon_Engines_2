@@ -58,6 +58,7 @@ public class ZombieHitbox : MonoBehaviour
         if (zs != null)
             zs.PlayHitSound();
 
+        // temp scoring fix
         if (parentZombie.IsDead() && !wasDead)
         {
             ScoreManager.instance.AddPoints(pointsForKill);
