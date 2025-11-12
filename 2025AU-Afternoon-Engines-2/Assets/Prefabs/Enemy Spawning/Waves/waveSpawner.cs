@@ -56,6 +56,7 @@ public class waveSpawner : MonoBehaviour
             // play zombie sound
             ZombieSound zs = newEnemy.GetComponent<ZombieSound>();
             if (zs != null)
+
                 zs.PlayMoanLoop();
 
             yield return new WaitForSeconds(currentWave.timeToNextEnemy);

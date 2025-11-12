@@ -382,14 +382,14 @@ MonoBehaviour:
     - {fileID: -8092546367345347850, guid: 33a90aa2c42463845b038908afea2370, type: 3}
     - {fileID: -8092546367345347850, guid: 33a90aa2c42463845b038908afea2370, type: 3}
     timeToNextEnemy: 1
-    timeToNextWave: 5
+    timeToNextWave: 10
     enemiesLeft: 0
   - enemies:
     - {fileID: 6494293886366923867, guid: 2544c8ba35652a74e890975f1a457445, type: 3}
     - {fileID: 6494293886366923867, guid: 2544c8ba35652a74e890975f1a457445, type: 3}
     - {fileID: 6494293886366923867, guid: 2544c8ba35652a74e890975f1a457445, type: 3}
     timeToNextEnemy: 1
-    timeToNextWave: 5
+    timeToNextWave: 15
     enemiesLeft: 0
   - enemies:
     - {fileID: 6458798958874506214, guid: 96ae539369d84c24d854f25cad02ec43, type: 3}

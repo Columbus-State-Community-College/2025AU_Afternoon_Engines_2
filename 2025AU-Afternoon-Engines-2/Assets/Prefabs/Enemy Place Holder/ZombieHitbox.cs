@@ -9,11 +9,17 @@ public class ZombieHitbox : MonoBehaviour
     public int pointsForKill = 50;
     public bool isHead = false;
 
-    [Header("References")]
-    public ZombieHealth parentZombie; // assign in inspector
-
     [Header("Hit Reaction")]
     public float knockbackForce = 3f;   // tweak this in inspector
+
+    private ZombieHealth parentZombie;
+
+    private void Awake()
+    {
+        parentZombie = GetComponentInParent<ZombieHealth>();
+        if (parentZombie == null)
+            Debug.LogError($"{name} is missing ZombieHealth in parent");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,29 +37,15 @@ public class ZombieHitbox : MonoBehaviour
     private void ApplyKnockback(Transform bullet)
     {
         Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
-        NavMeshAgent agent = parentZombie.GetComponent<NavMeshAgent>();
 
         if (rb == null) return;
-
-        // Temporarily disable AI so physics can push it
-        if (agent != null)
-            agent.enabled = false;
 
         Vector3 direction = (parentZombie.transform.position - bullet.position).normalized;
         direction.y = 0;
 
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
 
-        // Re-enable AI after short delay
-        StartCoroutine(ReenableAgent(agent));
-    }
-
-    private IEnumerator ReenableAgent(NavMeshAgent agent)
-    {
-        if (agent == null) yield break;
-
-        yield return new WaitForSeconds(0.1f); // small pause
-        agent.enabled = true;
+        // dont disable NavMesh, it was causing the enemies to not die
     }
 
     private void ApplyDamage(int damage)
