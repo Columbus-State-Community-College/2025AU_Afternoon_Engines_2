@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d6d5b642d1a0d409fa80c58198e879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicTrackName: ominous Music 1
+  musicTrackName: OminousMusic2
   playOnStart: 1
   fadeIn: 0
   fadeTime: 1.5
