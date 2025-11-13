@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.AI;   
+using UnityEngine.AI;
 using System.Collections;
 
 public class ZombieHitbox : MonoBehaviour
@@ -10,8 +10,12 @@ public class ZombieHitbox : MonoBehaviour
     public bool isHead = false;
 
     [Header("Hit Reaction")]
-    public float knockbackForce = 3f;   // tweak this in inspector
+    public float knockbackForce = 3f; // tweak this in inspector
 
+    [Header("Hit Cooldown")]
+    public float hitCooldown = 0.05f; // prevents double hits
+
+    private bool recentlyHit = false;
     private ZombieHealth parentZombie;
 
     private void Awake()
@@ -21,30 +25,41 @@ public class ZombieHitbox : MonoBehaviour
             Debug.LogError($"{name} is missing ZombieHealth in parent");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!other.CompareTag("Bullet")) return;
+        // only respond to bullets
+        if (!collision.collider.CompareTag("Bullet")) return;
 
-        Bullet bullet = other.GetComponent<Bullet>();
+        // prevents 2 hitboxes from triggering in the same frame
+        if (recentlyHit) return;
+
+        recentlyHit = true;
+        StartCoroutine(ResetHitFlag());
+
+        Bullet bullet = collision.collider.GetComponent<Bullet>();
         int damageAmount = bullet != null ? (int)bullet.damage : 20;
 
         ApplyDamage(damageAmount);
-        ApplyKnockback(other.transform);
+        ApplyKnockback(collision.collider.transform);
 
-        Destroy(other.gameObject);
+        Destroy(collision.gameObject);
+    }
+
+    private IEnumerator ResetHitFlag()
+    {
+        yield return new WaitForSeconds(hitCooldown);
+        recentlyHit = false;
     }
 
     private void ApplyKnockback(Transform bullet)
     {
         Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
-
         if (rb == null) return;
 
         Vector3 direction = (parentZombie.transform.position - bullet.position).normalized;
         direction.y = 0;
 
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
-
         // dont disable NavMesh, it was causing the enemies to not die
     }
 
@@ -58,20 +73,18 @@ public class ZombieHitbox : MonoBehaviour
         if (zs != null)
             zs.PlayHitSound();
 
-        // temp scoring fix
+        // points if killed this frame (not before)
         if (parentZombie.IsDead() && !wasDead)
         {
             ScoreManager.instance.AddPoints(pointsForKill);
-        }
 
+            // stop moaning if dead
+            if (zs != null)
+                zs.StopMoan();
+        }
         else if (!parentZombie.IsDead() && !wasDead)
         {
             ScoreManager.instance.AddPoints(pointsForHit);
         }
-
-        // if zombie is dead, stop looping sound
-        if (parentZombie.IsDead())
-            zs.StopMoan();
     }
-
 }
