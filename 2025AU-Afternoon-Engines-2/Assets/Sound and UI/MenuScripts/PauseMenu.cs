@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; // Resume time
         isPaused = false;
 
+        AudioListener.pause = false; // resume sound with game
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -35,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0f; // Freeze game
         isPaused = true;
+
+        AudioListener.pause = true; // stop sound when game is paused
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

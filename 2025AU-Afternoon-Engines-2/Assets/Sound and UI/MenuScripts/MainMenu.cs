@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("TestingArea");
+
+        AudioListener.pause = false; // lets audio start again if the player goes to back main menu and clicks start
     }
 
     public void ShowCredits()
