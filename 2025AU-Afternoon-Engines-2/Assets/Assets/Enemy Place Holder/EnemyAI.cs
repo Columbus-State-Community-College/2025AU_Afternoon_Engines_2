@@ -34,11 +34,11 @@ public class EnemyAI : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.transform;
-            Debug.Log("[EnemyAI] Found player: " + player.name);
+//            Debug.Log("[EnemyAI] Found player: " + player.name);
         }
         else
         {
-            Debug.LogWarning("[EnemyAI] No player found! Check Player tag.");
+//            Debug.LogWarning("[EnemyAI] No player found! Check Player tag.");
         }
     }
 
@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
         logTimer += Time.deltaTime;
         if (logTimer >= logInterval)
         {
-            Debug.Log("[EnemyAI] Distance to player: " + distance.ToString("F2"));
+//            Debug.Log("[EnemyAI] Distance to player: " + distance.ToString("F2"));
             logTimer = 0f;
         }
 
@@ -85,7 +85,7 @@ public class EnemyAI : MonoBehaviour
             agent.enabled = false;
 
             StartCoroutine(SmallPushBack(bounceDir));
-            Debug.Log("[EnemyAI] Light pushback from player!");
+//            Debug.Log("[EnemyAI] Light pushback from player!");
         }
     }
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2618542863167862621}
   - component: {fileID: 1726443584801548466}
   - component: {fileID: 3800322033863020885}
+  - component: {fileID: 7750784038255892556}
   m_Layer: 0
   m_Name: Base Enemy PH
   m_TagString: Enemy
@@ -260,6 +261,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f470528c0f82dc47b9b131857317537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7750784038255892556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810067333466635399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558313318b8a79f45a5d634027bcf930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 10
+  attackStopDistance: 1.2
+  attackCooldown: 3
+  player: {fileID: 0}
 --- !u!1001 &4057576248177928579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4006836770313505746, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7011559241904727542, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: m_IsTrigger

@@ -10,7 +10,7 @@ public class ZombieHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log($"[ZombieHealth] {gameObject.name} spawned with {maxHealth} HP");
+//        Debug.Log($"[ZombieHealth] {gameObject.name} spawned with {maxHealth} HP");
     }
 
     public void TakeDamage(int damage)
@@ -18,7 +18,7 @@ public class ZombieHealth : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        Debug.Log($"[ZombieHealth] {gameObject.name} took {damage} dmg ({currentHealth}/{maxHealth})");
+//        Debug.Log($"[ZombieHealth] {gameObject.name} took {damage} dmg ({currentHealth}/{maxHealth})");
 
         if (currentHealth == 0)
             Die();
@@ -31,7 +31,7 @@ public class ZombieHealth : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log($"[ZombieHealth] {gameObject.name} died!");
+//        Debug.Log($"[ZombieHealth] {gameObject.name} died!");
 
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent != null)
