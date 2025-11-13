@@ -10,9 +10,13 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("TestingArea");
+        PauseMenu.GameIsPaused = false;
+        PauseMenu.lastUnpauseTime = -1f;
+        GunScriptBase.isReloading = false;
 
         AudioListener.pause = false; // lets audio start again if the player goes to back main menu and clicks start
+
+        SceneManager.LoadScene("TestingArea");
     }
 
     public void ShowCredits()

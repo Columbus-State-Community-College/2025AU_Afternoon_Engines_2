@@ -28,8 +28,11 @@ public class GunScriptBase : MonoBehaviour
     }
 
     void Update()
-    { 
-        
+    {
+
+        if (PauseMenu.GameIsPaused || Time.unscaledTime - PauseMenu.lastUnpauseTime < 0.1f) 
+            return;
+
         if (Input.GetMouseButtonUp (0)) { //fires the gun, with a certain accuracy.
             if (magazine > 0 && !isReloading) {
                 gunshot.Play();
