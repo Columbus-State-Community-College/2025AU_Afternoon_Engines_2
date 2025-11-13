@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 public class PlayerHealth : MonoBehaviour
 {   
-    public static float playerHealth = 100 * PerkChecker.HealthPerkMult;
+    public float playerHealth = 100 * PerkChecker.HealthPerkMult;
     public GameObject gun;
     public GameObject parent;
     private float regenTime = 4f;
