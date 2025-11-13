@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        currentScore = 0;
         UpdateUI();
     }
 
@@ -45,7 +46,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"placeholder score: {currentScore}";
+            scoreText.text = $"Score: {currentScore}";
             Debug.Log($"[ScoreManager] UI updated: {scoreText.text}");
         }
         else
