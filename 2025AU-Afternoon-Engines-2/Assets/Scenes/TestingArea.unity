@@ -3455,6 +3455,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: sound system
       objectReference: {fileID: 0}
+    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: musicTracks.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: musicTracks.Array.data[17].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 30fc089ec87ed644d9b99d546de56618, type: 3}
+    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: musicTracks.Array.data[17].name
+      value: Maybe3
+      objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1547174
