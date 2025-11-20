@@ -20,7 +20,7 @@ public class ZombieAttack : MonoBehaviour
     {
         // Attempt to find player by tag
         player = GameObject.FindWithTag("Player").transform;
-        Debug.Log("[ZombieAttack] Start() — Player assigned: " + player.name);
+//        Debug.Log("[ZombieAttack] Start() — Player assigned: " + player.name);
     }
 
     void Update()
@@ -28,7 +28,7 @@ public class ZombieAttack : MonoBehaviour
         // If player reference is not ready, keep searching
         if (player == null)
         {
-            Debug.LogWarning("[ZombieAttack] Player reference is NULL");
+//            Debug.LogWarning("[ZombieAttack] Player reference is NULL");
             return;
         }
     
@@ -41,7 +41,7 @@ public class ZombieAttack : MonoBehaviour
         // Throttled distance/readout logs
         if (logTimer >= logInterval)
         {
-            Debug.Log("[ZombieAttack] Distance to player: " + distance + " (Range=" + attackRange + ")");
+//            Debug.Log("[ZombieAttack] Distance to player: " + distance + " (Range=" + attackRange + ")");
             logTimer = 0f;
         }
 
@@ -51,7 +51,7 @@ public class ZombieAttack : MonoBehaviour
             // Throttled "inside attack range" log
             if (logTimer == 0f)
             {
-                Debug.Log("[ZombieAttack] Player is inside attack range");
+//                Debug.Log("[ZombieAttack] Player is inside attack range");
             }
 
             // Check cooldown
@@ -59,18 +59,18 @@ public class ZombieAttack : MonoBehaviour
             {
                 lastAttackTime = Time.time;
 
-                Debug.Log("[ZombieAttack] ATTACK EXECUTED!");
+//                Debug.Log("[ZombieAttack] ATTACK EXECUTED!");
 
                 PlayerHealth health = player.GetComponent<PlayerHealth>();
 
                 if (health != null)
                 {
-                    Debug.Log("[ZombieAttack] Calling PlayerHealth.PlayerDamage(" + attackDamage + ")");
+//                    Debug.Log("[ZombieAttack] Calling PlayerHealth.PlayerDamage(" + attackDamage + ")");
                     health.PlayerDamage(attackDamage); // uses Inspector damage
                 }
                 else
                 {
-                    Debug.LogWarning("[ZombieAttack] PlayerHealth script NOT FOUND");
+//                    Debug.LogWarning("[ZombieAttack] PlayerHealth script NOT FOUND");
                 }
             }
             else
@@ -80,7 +80,7 @@ public class ZombieAttack : MonoBehaviour
                 // Throttled cooldown log
                 if (logTimer == 0f)
                 {
-                    Debug.Log("[ZombieAttack] Attack on cooldown: " + cd.ToString("F2") + " seconds remaining");
+//                    Debug.Log("[ZombieAttack] Attack on cooldown: " + cd.ToString("F2") + " seconds remaining");
                 }
             }
         }

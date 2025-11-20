@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7607502679710884220}
   - component: {fileID: 6327116876849200421}
   - component: {fileID: 6742650623933706817}
-  - component: {fileID: 6016282661877011406}
   - component: {fileID: 4211754138836561908}
-  - component: {fileID: -8092546367345347850}
+  - component: {fileID: 6016282661877011406}
   - component: {fileID: 2618542863167862621}
+  - component: {fileID: -8092546367345347850}
   - component: {fileID: 1726443584801548466}
   - component: {fileID: 3800322033863020885}
   - component: {fileID: 7750784038255892556}
@@ -91,25 +91,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 1
---- !u!114 &6016282661877011406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2810067333466635399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e0d2f339d05aa4d8998668cd0cc83e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  waveSpawner: {fileID: 0}
-  myWave:
-    enemies: []
-    timeToNextEnemy: 0
-    timeToNextWave: 0
-    enemiesLeft: 0
 --- !u!114 &4211754138836561908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +110,7 @@ MonoBehaviour:
   bounceForce: 2
   disableTime: 0.5
   logInterval: 60
---- !u!114 &-8092546367345347850
+--- !u!114 &6016282661877011406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +119,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2810067333466635399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe5e665c872b28429a3610fa254b6fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 44e0d2f339d05aa4d8998668cd0cc83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  waveSpawner: {fileID: 0}
+  myWave:
+    enemies: []
+    timeToNextEnemy: 0
+    timeToNextWave: 0
+    enemiesLeft: 0
 --- !u!114 &2618542863167862621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +146,18 @@ MonoBehaviour:
   isHead: 0
   knockbackForce: 3
   hitCooldown: 0.05
+--- !u!114 &-8092546367345347850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810067333466635399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe5e665c872b28429a3610fa254b6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1726443584801548466
 AudioSource:
   m_ObjectHideFlags: 0

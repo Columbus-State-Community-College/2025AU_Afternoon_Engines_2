@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public Image healthBar;
     void Start()
     {
-        Debug.Log("[PlayerHealth] Start — Initial Health: " + playerHealth); // added by Thomas for testing
+//        Debug.Log("[PlayerHealth] Start — Initial Health: " + playerHealth); // added by Thomas for testing
         setHealthUI();
     }
 
@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
     {
         float finalDamage = amount * hitDamageMultiplier; // allows balancing 
 
-        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called"); 
+//        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called"); 
 
         if (playerHealth > 0 && iframes <= 0)
         {
@@ -53,12 +53,12 @@ public class PlayerHealth : MonoBehaviour
             regenTime = 6f;
             iframes = 0.8f;
 
-            Debug.Log("[PlayerHealth] Took " + finalDamage + " damage — Health now: " + playerHealth); 
+//            Debug.Log("[PlayerHealth] Took " + finalDamage + " damage — Health now: " + playerHealth); 
             setHealthUI();
         }
         else
         {
-            Debug.Log("[PlayerHealth] Damage ignored (iFrames active)"); 
+//            Debug.Log("[PlayerHealth] Damage ignored (iFrames active)"); 
         }
     }
 
@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerDamage() {
         if (playerHealth > 0 && iframes <= 0) {
 
-            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); // added by Thomas 
+//            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); // added by Thomas 
 
             playerHealth -= meleeDamage; // editable in Inspector
             regenTime = 4f;
@@ -79,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerHealth > 0 && iframes <= 0)
         {
-            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); 
+//            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); 
 
             playerHealth -= meleeDamage; // editable in Inspector
             regenTime = 4f;
@@ -91,11 +91,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
 
-        Debug.Log("[PlayerHealth] OnTriggerStay detected with: " + other.name); // added by Thomas for testing
+//        Debug.Log("[PlayerHealth] OnTriggerStay detected with: " + other.name); // added by Thomas for testing
 
         if (other.gameObject.CompareTag("Enemy") && iframes <= 0) {
 
-            Debug.Log("[PlayerHealth] Attempting melee damage"); // added by Thomas for testing
+//            Debug.Log("[PlayerHealth] Attempting melee damage"); // added by Thomas for testing
 
 
             PlayerDamage_Internal(); // uses meleeDamage
@@ -111,7 +111,7 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth <= 0) {
 
             playerHealth = 0;
-            Debug.Log("[PlayerHealth] PLAYER DIED!"); // added by Thomas for testing
+//            Debug.Log("[PlayerHealth] PLAYER DIED!"); // added by Thomas for testing
 
             gun.SetActive(false);
             parent.SetActive(false);

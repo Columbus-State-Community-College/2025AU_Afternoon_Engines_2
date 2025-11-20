@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     public void AddPoints(int amount)
     {
         currentScore += amount;
-        Debug.Log($"[ScoreManager] Added {amount} pts | Total: {currentScore}");
+//        Debug.Log($"[ScoreManager] Added {amount} pts | Total: {currentScore}");
         UpdateUI();
     }
 
@@ -38,7 +38,7 @@ public class ScoreManager : MonoBehaviour
             UpdateUI();
             return true;
         }
-        Debug.Log("[ScoreManager] Not enough points!");
+//        Debug.Log("[ScoreManager] Not enough points!");
         return false;
     }
 
@@ -47,11 +47,11 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = $"Score: {currentScore}";
-            Debug.Log($"[ScoreManager] UI updated: {scoreText.text}");
+//            Debug.Log($"[ScoreManager] UI updated: {scoreText.text}");
         }
         else
         {
-            Debug.LogWarning("[ScoreManager] Missing scoreText reference!");
+//            Debug.LogWarning("[ScoreManager] Missing scoreText reference!");
         }
     }
 }

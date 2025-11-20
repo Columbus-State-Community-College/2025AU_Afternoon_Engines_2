@@ -13,7 +13,7 @@ public class ZombieHitbox : MonoBehaviour
     public float knockbackForce = 3f; // tweak this in inspector
 
     [Header("Hit Cooldown")]
-    public float hitCooldown = 0.05f; // prevents double hits
+    public float hitCooldown = 0.01f; // prevents double hits
 
     private bool recentlyHit = false;
     private ZombieHealth parentZombie;
@@ -68,23 +68,26 @@ public class ZombieHitbox : MonoBehaviour
         bool wasDead = parentZombie.IsDead();
         parentZombie.TakeDamage(damage);
 
+        // Identify the hitbox for debugging
+        string hitboxName = isHead ? "HEAD" : "BODY";
+        Debug.Log($"[ZombieHitbox] Hit registered on {hitboxName} (Damage: {damage})");
+
         // play hit sound
         ZombieSound zs = parentZombie.GetComponent<ZombieSound>();
-        if (zs != null)
-            zs.PlayHitSound();
+        if (zs != null) zs.PlayHitSound();
 
         // points if killed this frame (not before)
         if (parentZombie.IsDead() && !wasDead)
         {
             ScoreManager.instance.AddPoints(pointsForKill);
-
             // stop moaning if dead
-            if (zs != null)
-                zs.StopMoan();
+            if (zs != null) zs.StopMoan();
         }
         else if (!parentZombie.IsDead() && !wasDead)
         {
+            // normal hit
             ScoreManager.instance.AddPoints(pointsForHit);
         }
     }
+
 }

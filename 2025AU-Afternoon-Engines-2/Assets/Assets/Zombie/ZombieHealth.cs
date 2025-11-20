@@ -36,7 +36,7 @@ public class ZombieHealth : MonoBehaviour
 
     private void Die()
     {
-        //Debug.Log($"[ZombieHealth] {gameObject.name} died!");
+//        Debug.Log($"[ZombieHealth] {gameObject.name} died!");
 
         if (isDead) return;
         isDead = true;
