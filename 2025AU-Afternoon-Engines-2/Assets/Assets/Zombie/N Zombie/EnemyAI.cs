@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     public float disableTime = 0.5f;
 
     [Header("Debug Settings")]
-    public float logInterval = 60f;
+    public float logInterval = 30f;
 
     private NavMeshAgent agent;
     private Rigidbody rb;

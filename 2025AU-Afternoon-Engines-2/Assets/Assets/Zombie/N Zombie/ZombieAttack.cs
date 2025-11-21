@@ -9,7 +9,7 @@ public class ZombieAttack : MonoBehaviour
     public float attackDamage = 10f; // editable in Inspector
 
     [Header("Debug Settings")]
-    public float logInterval = 60f;  // controls how often spammy logs print
+    public float logInterval = 30f;  // controls how often spammy logs print
 
     private float logTimer = 0f;
 
@@ -20,7 +20,7 @@ public class ZombieAttack : MonoBehaviour
     {
         // Attempt to find player by tag
         player = GameObject.FindWithTag("Player").transform;
-//        Debug.Log("[ZombieAttack] Start() — Player assigned: " + player.name);
+//      Debug.Log("[ZombieAttack] Start() — Player assigned: " + player.name);
     }
 
     void Update()
@@ -35,10 +35,7 @@ public class ZombieAttack : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         // Debug for seeing range checks
 
-        // Update timer for throttled logs
         logTimer += Time.deltaTime;
-
-        // Throttled distance/readout logs
         if (logTimer >= logInterval)
         {
 //            Debug.Log("[ZombieAttack] Distance to player: " + distance + " (Range=" + attackRange + ")");
