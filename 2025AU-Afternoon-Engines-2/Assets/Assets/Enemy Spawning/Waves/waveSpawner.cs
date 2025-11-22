@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class waveSpawner : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class waveSpawner : MonoBehaviour
 
     private bool readyToCountDown;
 
+    public TMP_Text waveText;
+    public TMP_Text enemiesLeftText;
+    public TMP_Text timeUntilNextWaveText;
+
     private void Start()
     {
         readyToCountDown = true;
@@ -25,9 +31,28 @@ public class waveSpawner : MonoBehaviour
 
     private void Update()
     {
+        // wave counter
+        waveText.text = "Wave: " + (currentWaveIndex + 1);
+
+        // enemy counter
+        if (currentWaveIndex < waves.Length)
+            enemiesLeftText.text = "Enemies Left: " + waves[currentWaveIndex].enemiesLeft;
+        else
+            enemiesLeftText.text = "Enemies Left: 0";
+
+        // between wave countdown
+        bool waveOver = !spawning && waves[currentWaveIndex].enemiesLeft <= 0;
+
         if (readyToCountDown && !spawning)
         {
+            timeUntilNextWaveText.gameObject.SetActive(true);
+            timeUntilNextWaveText.text = "Next Wave In: " + countdown.ToString("F1") + "s";
+
             countdown -= Time.deltaTime;
+        }
+        else
+        {
+            timeUntilNextWaveText.gameObject.SetActive(false);
         }
 
         if (spawning) return;

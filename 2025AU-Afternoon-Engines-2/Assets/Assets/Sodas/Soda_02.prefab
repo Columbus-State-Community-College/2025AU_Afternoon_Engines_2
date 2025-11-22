@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0330b465e64bb074b93c85a02459a3bb, type: 2}
     - target: {fileID: 919132149155446097, guid: 59a00b5ab1d543c41b8f16a2d01452d5, type: 3}
       propertyPath: m_Name
-      value: soda_export02
+      value: Soda_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59a00b5ab1d543c41b8f16a2d01452d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
