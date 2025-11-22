@@ -18,6 +18,7 @@ public class waveSpawner : MonoBehaviour
     public TMP_Text waveText;
     public TMP_Text enemiesLeftText;
     public TMP_Text timeUntilNextWaveText;
+    public GameObject winScreen;
 
     private void Start()
     {
@@ -41,7 +42,11 @@ public class waveSpawner : MonoBehaviour
             enemiesLeftText.text = "Enemies Left: 0";
 
         // between wave countdown
-        bool waveOver = !spawning && waves[currentWaveIndex].enemiesLeft <= 0;
+        bool waveOver = false;
+        if (currentWaveIndex < waves.Length)
+        {
+            waveOver = !spawning && waves[currentWaveIndex].enemiesLeft <= 0;
+        }
 
         if (readyToCountDown && !spawning)
         {
@@ -79,7 +84,6 @@ public class waveSpawner : MonoBehaviour
         {
             if (spawnPoints.Length == 0)
             {
-                Debug.LogError("No spawn points assigned");
                 spawning = false;
                 yield break;
             }
@@ -119,7 +123,12 @@ public class waveSpawner : MonoBehaviour
 
         if (currentWaveIndex >= waves.Length)
         {
-            Debug.Log("All waves complete");
+            winScreen.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            Time.timeScale = 0f;
         }
 
         spawning = false;

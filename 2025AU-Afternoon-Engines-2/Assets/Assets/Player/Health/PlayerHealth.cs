@@ -11,12 +11,15 @@ public class PlayerHealth : MonoBehaviour
     private float iframes = 0.8f;
     private float maxHealth = 100;
 
-     [Header("Damage Settings")] // added by Thomas 
+    [Header("Damage Settings")] 
     public float meleeDamage = 34f; // editable in Inspector 
     public float hitDamageMultiplier = 1f; // optional balancing multiplier 
    
     public TextMeshProUGUI healthTex;
     public Image healthBar;
+
+    public GameObject loseScreen;
+
     void Start()
     {
 //        Debug.Log("[PlayerHealth] Start — Initial Health: " + playerHealth); // added by Thomas for testing
@@ -115,6 +118,15 @@ public class PlayerHealth : MonoBehaviour
 
             gun.SetActive(false);
             parent.SetActive(false);
+
+            if (loseScreen != null)
+            {
+                loseScreen.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+            }
         }
     }
     void setHealthUI() {
