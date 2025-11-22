@@ -15,10 +15,15 @@ public class waveSpawner : MonoBehaviour
 
     private bool readyToCountDown;
 
+    [Header("UI Ties")]
     public TMP_Text waveText;
     public TMP_Text enemiesLeftText;
     public TMP_Text timeUntilNextWaveText;
     public GameObject winScreen;
+
+    [Header("To Disable Gun When Player Wins")]
+    public GameObject gun;
+    public GameObject parent;
 
     private void Start()
     {
@@ -123,7 +128,11 @@ public class waveSpawner : MonoBehaviour
 
         if (currentWaveIndex >= waves.Length)
         {
-            winScreen.SetActive(true);
+            if (winScreen != null)
+                winScreen.SetActive(true);
+
+            if (gun != null) gun.SetActive(false);
+            if (parent != null) parent.SetActive(false);
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

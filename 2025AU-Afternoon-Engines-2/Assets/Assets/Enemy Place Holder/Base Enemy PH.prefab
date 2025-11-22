@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 1
   attackStopDistance: 1.2
-  attackCooldown: 1
+  attackCooldown: 0.5
   attackDamage: 10
   logInterval: 60
 --- !u!1001 &4057576248177928579
