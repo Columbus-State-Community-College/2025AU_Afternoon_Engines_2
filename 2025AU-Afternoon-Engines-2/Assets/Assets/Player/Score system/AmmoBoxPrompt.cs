@@ -21,7 +21,7 @@ public class AmmoBoxPrompt : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && ScoreManager.currentScore >= 1250)
             {
                 GunScriptBase.reserve = GunScriptBase.maxReserve;
-                ScoreManager.scoreText.text = $"Score: {ScoreManager.currentScore}";
+                ScoreManager.currentScore -= 1250;
             }
         }
         else {
