@@ -88,7 +88,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &1952568452101916179
 MonoBehaviour:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072345934528426400}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e0ef28fefbabda4eb4a0aa1a926ba0c, type: 3}
   m_Name: 
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4dc7936c8649d64a9e8e608628f3782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.8
+  attackRange: 5
   attackStopDistance: 1.2
   attackCooldown: 3
   attackDamage: 22
@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257869808452187587, guid: 6efec870a7be269469b438e8944251f4, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8125640345110515604, guid: 6efec870a7be269469b438e8944251f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -436,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7011559241904727542, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7098913250239914068, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: parentZombie
