@@ -26,7 +26,7 @@ public class BossAttack : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogWarning("[BossAttack] Player reference is NULL");
+//            Debug.LogWarning("[BossAttack] Player reference is NULL");
             return;
         }
 
@@ -35,29 +35,29 @@ public class BossAttack : MonoBehaviour
         logTimer += Time.deltaTime;
         if (logTimer >= logInterval)
         {
-            Debug.Log("[BossAttack] Distance to player: " + distance + " (Range=" + attackRange + ")");
+//            Debug.Log("[BossAttack] Distance to player: " + distance + " (Range=" + attackRange + ")");
             logTimer = 0f;
         }
 
         if (distance <= attackRange)
         {
             if (logTimer == 0f)
-                Debug.Log("[BossAttack] Player is inside attack range");
+//                Debug.Log("[BossAttack] Player is inside attack range");
 
             if (Time.time >= lastAttackTime + attackCooldown)
             {
                 lastAttackTime = Time.time;
-                Debug.Log("[BossAttack] ATTACK EXECUTED!");
+//                Debug.Log("[BossAttack] ATTACK EXECUTED!");
 
                 PlayerHealth health = player.GetComponent<PlayerHealth>();
                 if (health != null)
                 {
-                    Debug.Log("[BossAttack] Calling PlayerHealth.PlayerDamage(" + attackDamage + ")");
+//                    Debug.Log("[BossAttack] Calling PlayerHealth.PlayerDamage(" + attackDamage + ")");
                     health.PlayerDamage(attackDamage);
                 }
                 else
                 {
-                    Debug.LogWarning("[BossAttack] PlayerHealth script NOT FOUND");
+//                    Debug.LogWarning("[BossAttack] PlayerHealth script NOT FOUND");
                 }
             }
             else
@@ -65,7 +65,8 @@ public class BossAttack : MonoBehaviour
                 float cd = (lastAttackTime + attackCooldown) - Time.time;
 
                 if (logTimer == 0f)
-                    Debug.Log("[BossAttack] Attack on cooldown: " + cd.ToString("F2") + " seconds remaining");
+//                    Debug.Log("[BossAttack] Attack on cooldown: " + cd.ToString("F2") + " seconds remaining");
+                    {} // <----- dont know why there are need but will error with out them
             }
         }
     }

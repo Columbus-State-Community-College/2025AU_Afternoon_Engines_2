@@ -37,7 +37,7 @@ public class BossEnemyAI : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[BossAI] No player found! Check Player tag.");
+//            Debug.LogWarning("[BossAI] No player found! Check Player tag.");
         }
     }
 
@@ -50,7 +50,7 @@ public class BossEnemyAI : MonoBehaviour
         logTimer += Time.deltaTime;
         if (logTimer >= logInterval)
         {
-            Debug.Log("[BossAI] Distance to player: " + distance.ToString("F2"));
+//            Debug.Log("[BossAI] Distance to player: " + distance.ToString("F2"));
             logTimer = 0f;
         }
 

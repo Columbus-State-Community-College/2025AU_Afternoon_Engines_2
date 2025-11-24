@@ -97,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072345934528426400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e0ef28fefbabda4eb4a0aa1a926ba0c, type: 3}
   m_Name: 
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622284444713871936, guid: 6efec870a7be269469b438e8944251f4, type: 3}
       propertyPath: m_Name
-      value: enemy head PH
+      value: Enemy Boss head PH
       objectReference: {fileID: 0}
     - target: {fileID: 7257869808452187587, guid: 6efec870a7be269469b438e8944251f4, type: 3}
       propertyPath: m_Radius
@@ -428,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4006836770313505746, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: m_Name
-      value: Enemy body PH
+      value: Enemy Boss body PH
       objectReference: {fileID: 0}
     - target: {fileID: 4006836770313505746, guid: 7b6e1f18ff44b494690ae93e53b3c868, type: 3}
       propertyPath: m_TagString

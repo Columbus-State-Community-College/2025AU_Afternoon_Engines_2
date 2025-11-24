@@ -22,34 +22,39 @@ public class BossHitbox : MonoBehaviour
     {
         parentZombie = GetComponentInParent<BossHealth>();
         if (parentZombie == null)
-            Debug.LogError($"{name} is missing BossHealth in parent");
+            {} // <----- dont know why there are need but will error with out them
+//            Debug.LogError($"{name} is missing BossHealth in parent");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!collision.collider.CompareTag("Bullet")) return;
+        // Only react to bullets
+//        Debug.Log("[BossHitbox] Trigger with: " + other.name + " (tag: " + other.tag + ")");
+        if (!other.CompareTag("Bullet")) return;
 
-        Debug.Log("[BossHitbox] Bullet collision registered");
+//        Debug.Log("[BossHitbox] Bullet collision registered");
 
         if (recentlyHit) return;
 
         recentlyHit = true;
         StartCoroutine(ResetHitFlag());
 
-        Bullet bullet = collision.collider.GetComponent<Bullet>();
+        Bullet bullet = other.GetComponent<Bullet>();
         int damageAmount = bullet != null ? (int)bullet.damage : 20;
 
         ApplyDamage(damageAmount);
-        ApplyKnockback(collision.collider.transform);
+        ApplyKnockback(other.transform);
 
-        Destroy(collision.gameObject);
+
+        // Destroy the bullet here
+        Destroy(other.gameObject);
     }
 
     private IEnumerator ResetHitFlag()
     {
         yield return new WaitForSeconds(hitCooldown);
         recentlyHit = false;
-        Debug.Log("[BossHitbox] Hit cooldown reset");
+//        Debug.Log("[BossHitbox] Hit cooldown reset");
     }
 
     private void ApplyKnockback(Transform bullet)
@@ -57,7 +62,7 @@ public class BossHitbox : MonoBehaviour
         Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
         if (rb == null)
         {
-            Debug.LogWarning("[BossHitbox] No Rigidbody on boss!");
+//            Debug.LogWarning("[BossHitbox] No Rigidbody on boss!");
             return;
         }
 
@@ -66,29 +71,30 @@ public class BossHitbox : MonoBehaviour
 
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
 
-        Debug.Log("[BossHitbox] Knockback applied");
+//        Debug.Log("[BossHitbox] Knockback applied");
     }
 
     private void ApplyDamage(int damage)
     {
         bool wasDead = parentZombie.IsDead();
 
-        Debug.Log($"[BossHitbox] Hit registered on {(isHead ? "HEAD" : "BODY")} (Damage: {damage})");
+//        Debug.Log($"[BossHitbox] Hit registered on {(isHead ? "HEAD" : "BODY")} (Damage: {damage})");
 
         parentZombie.TakeDamage(damage);
 
-        ZombieSound zs = parentZombie.GetComponent<ZombieSound>();
+        // Use the boss sound script, not the normal zombie one
+        BossZombieSound zs = parentZombie.GetComponent<BossZombieSound>();
         if (zs != null) zs.PlayHitSound();
 
         if (parentZombie.IsDead() && !wasDead)
         {
-            Debug.Log("[BossHitbox] Boss killed — adding kill points");
+//            Debug.Log("[BossHitbox] Boss killed — adding kill points");
             ScoreManager.instance.AddPoints(pointsForKill);
             if (zs != null) zs.StopMoan();
         }
         else if (!parentZombie.IsDead())
         {
-            Debug.Log("[BossHitbox] Boss hit — adding hit points");
+//            Debug.Log("[BossHitbox] Boss hit — adding hit points");
             ScoreManager.instance.AddPoints(pointsForHit);
         }
     }

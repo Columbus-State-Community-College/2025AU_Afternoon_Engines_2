@@ -23,7 +23,7 @@ public class BossHealth : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        Debug.Log($"[BossHealth] {gameObject.name} took {damage} dmg ({currentHealth}/{maxHealth})");
+//        Debug.Log($"[BossHealth] {gameObject.name} took {damage} dmg ({currentHealth}/{maxHealth})");
 
         if (currentHealth == 0)
             Die();
@@ -36,7 +36,7 @@ public class BossHealth : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log($"[BossHealth] {gameObject.name} died!");
+//        Debug.Log($"[BossHealth] {gameObject.name} died!");
 
         if (isDead) return;
         isDead = true;
