@@ -7,7 +7,8 @@ public class GunScriptBase : MonoBehaviour
     public Rigidbody bullet;
     public float magazine = 7; // How much ammo the magazine starts with.
     public float magazineSize = 7; // The maximum amount of ammo that can be reloaded into the gun
-    public float reserve = 50; // The ammo that gets reloaded from the gun.
+    public static float reserve = 50; // The ammo that gets reloaded from the gun.
+    public static float maxReserve = 50;
 
     public static bool isReloading = false; 
     public float reloadTime = 2.3f; 
