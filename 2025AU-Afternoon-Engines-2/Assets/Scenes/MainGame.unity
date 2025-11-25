@@ -5873,6 +5873,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4670122655143072893, guid: de30397a93c7e79449d40d6d1c85ca5b, type: 3}
     - target: {fileID: 8508667926918522470, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4805206067961864578, guid: dad50d6a659ddd64b9e8aba8f7607885, type: 3}
+    - target: {fileID: 8508667926918522470, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: reload
       value: 
       objectReference: {fileID: 1187154778}
