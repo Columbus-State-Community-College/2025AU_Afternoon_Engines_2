@@ -4,7 +4,11 @@ public class Bullet : MonoBehaviour
 {
     private float lifeTime = 5;
     public float damage = 20;
+
     public GameObject groundImpactFX;
+    public GameObject zombieBloodFX;
+
+
     void Start()
     {
        
@@ -22,7 +26,11 @@ public class Bullet : MonoBehaviour
     
     private void OnCollisionEnter (Collision collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
-            damage = 20;
+            Instantiate(
+                zombieBloodFX,
+                collision.contacts[0].point,
+                Quaternion.identity
+            );
         }
         else if (collision.gameObject.CompareTag("Ground")) {
             Instantiate(
@@ -30,11 +38,7 @@ public class Bullet : MonoBehaviour
                 collision.contacts[0].point,
                 Quaternion.identity
             );
-            Debug.Log("log"); 
         }
-        Destroy(gameObject);
-    }
-    void Destroy() {
         Destroy(gameObject);
     }
 }

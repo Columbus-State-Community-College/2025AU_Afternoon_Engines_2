@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -493127567962926129}
   - component: {fileID: 524357411876938566}
   m_Layer: 0
-  m_Name: GroundHitFX
+  m_Name: ZombieHitFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2936519958195147239}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 2a2ff0798619a6747aa9be238c9ea506, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 37bc084fd6abf1847be170eb88262e3a, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 1
   m_StartSeed: 777532508

@@ -163,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   groundImpactFX: {fileID: 2936519958195147239, guid: 464d7a95d7dd6f04998a1ce0ef05be84, type: 3}
+  zombieBloodFX: {fileID: 2936519958195147239, guid: e2e22a09446e38f49ba3f031fd8b5065, type: 3}
 --- !u!73398921 &-600297818589367376
 VFXRenderer:
   serializedVersion: 1
