@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
    
     public TextMeshProUGUI healthTex;
     public Image healthBar;
+    public Image doubleHealthBar;
 
     public GameObject loseScreen;
 
@@ -131,7 +132,8 @@ public class PlayerHealth : MonoBehaviour
     }
     void setHealthUI() {
         healthTex.text = Mathf.Floor(playerHealth).ToString();
-        healthBar.fillAmount = playerHealth / maxHealth * PerkChecker.HealthPerkMult;
+        healthBar.fillAmount = playerHealth / 100;
+        doubleHealthBar.fillAmount = (playerHealth - 100) / 100;
     }
     
 }
