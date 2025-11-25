@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 784b34fe2fed9434485eea268adaaee9, type: 2}
     - target: {fileID: 919132149155446097, guid: 94bb7fe1c1241e240bbaeb34ad0ce904, type: 3}
       propertyPath: m_Name
-      value: Billboards
+      value: Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94bb7fe1c1241e240bbaeb34ad0ce904, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

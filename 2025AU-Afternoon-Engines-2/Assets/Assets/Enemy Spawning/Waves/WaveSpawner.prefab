@@ -403,3 +403,5 @@ MonoBehaviour:
   enemiesLeftText: {fileID: 0}
   timeUntilNextWaveText: {fileID: 0}
   winScreen: {fileID: 0}
+  gun: {fileID: 0}
+  parent: {fileID: 0}
