@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4, g: 0.23529412, b: 0.5803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4, g: 0.23529412, b: 0.5803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3126,7 +3126,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4, g: 0.23529412, b: 0.5803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3970,7 +3970,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4, g: 0.23529412, b: 0.5803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5776,6 +5776,10 @@ PrefabInstance:
       propertyPath: healthTex
       value: 
       objectReference: {fileID: 1286246176}
+    - target: {fileID: 1228300428342029311, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: loseScreen
+      value: 
+      objectReference: {fileID: 1438900629}
     - target: {fileID: 1398477441855031270, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.449
