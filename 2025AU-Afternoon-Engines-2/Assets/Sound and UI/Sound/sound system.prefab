@@ -390,3 +390,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1554a39c4c482cf4288228abdfd78c3a, type: 3}
   - name: FootStepsSlow
     clip: {fileID: 8300000, guid: 8adbf3e3480a92845b52be1d0f696ec2, type: 3}
+  - name: soda_drop
+    clip: {fileID: 8300000, guid: 4bc33dfafb47b804f944c44fdcbc32a8, type: 3}
+  - name: soda_drink
+    clip: {fileID: 8300000, guid: b951270549df0d74a8118df52dd264c3, type: 3}
+  - name: soda_open
+    clip: {fileID: 8300000, guid: 4ef8802d8b6692f4d99cce6ef0916bd4, type: 3}
+  - name: reload
+    clip: {fileID: 8300000, guid: aa22bf773474e8642887320f3147c122, type: 3}
+  - name: gunshotempty
+    clip: {fileID: 8300000, guid: 96c28d9054fc9474dae17efbe4658140, type: 3}
+  - name: gunshort 1
+    clip: {fileID: 8300000, guid: c62fa4d014eef0141879a87e65ec1aa8, type: 3}

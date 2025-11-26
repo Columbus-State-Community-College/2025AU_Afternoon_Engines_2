@@ -15,76 +15,85 @@ public class GunScriptBase : MonoBehaviour
     public float accuracy = 1.0f; 
     public float bulletForce = 1500f; 
 
-    public AudioSource gunshot;
-    public AudioSource reload;
-    public AudioSource gunshotEmpty;
     public TextMeshProUGUI ammoTex;
 
     public ParticleSystem muzzleFlash;
     public Transform Gun;
 
+    // NEW sound system component
+    private GunSound gunSound;
+
     void Start()
     {
+        // assign sound wrapper
+        gunSound = GetComponent<GunSound>();
 
         reserve = 500;
-
         SetText();
     }
 
     void Update()
     {
-
-        if (PauseMenu.GameIsPaused || Time.unscaledTime - PauseMenu.lastUnpauseTime < 0.1f) 
+        if (PauseMenu.GameIsPaused || Time.unscaledTime - PauseMenu.lastUnpauseTime < 0.1f)
             return;
 
-        if (Input.GetMouseButtonUp (0)) { //fires the gun, with a certain accuracy.
-            if (magazine > 0 && !isReloading) {
-                gunshot.Play();
+        // SHOOT
+        if (Input.GetMouseButtonUp(0)) { //fires the gun, with a certain accuracy.
+            if (magazine > 0 && !isReloading)
+            {
+                // NEW — play via SoundManager
+                if (gunSound != null) gunSound.PlayShoot();
+
+                // old effect unchanged
                 muzzleFlash.Play();
                 float horizontalSpread = Random.Range(-accuracy, accuracy);
                 float verticalSpread = Random.Range(-accuracy, accuracy);
                 Quaternion bulletRotation = transform.rotation * Quaternion.Euler(verticalSpread, horizontalSpread, 0);
-                Rigidbody instance = Instantiate (bullet, transform.position, bulletRotation) as Rigidbody;
-                instance.AddForce (instance.transform.forward * bulletForce);
+                Rigidbody instance = Instantiate(bullet, transform.position, bulletRotation) as Rigidbody;
+                instance.AddForce(instance.transform.forward * bulletForce);
                 magazine -= 1;
                 SetText();
-                }
+            }
             else if (!isReloading) {
-                gunshotEmpty.Play();
+                // NEW — empty click
+                if (gunSound != null) gunSound.PlayEmpty();
             }
-            }
-        
-        if (magazine < magazineSize && reserve > 0 && !isReloading) {
-            if (Input.GetKeyDown(KeyCode.R)) {
+        }
+
+        // RELOAD
+        if (magazine < magazineSize && reserve > 0 && !isReloading){
+            if (Input.GetKeyDown(KeyCode.R)){
                 StartCoroutine(Reload());
             }
         }
-        
     }
-    
+
     IEnumerator Reload() //reloads the gun. all of this is literally just so I can make the reload take time.
     {
         isReloading = true;
         Gun.Rotate(-45f, 0f, 0f);
-        reload.Play();
-        if (PerkChecker.hasSpeedReload) {
-            reload.pitch = 2f;
-            yield return new WaitForSeconds(reloadTime / 2); 
+
+        // NEW — reload sound
+        if (gunSound != null) gunSound.PlayReload();
+
+        // reload timing logic stays the same
+        if (PerkChecker.hasSpeedReload)
+        {
+            yield return new WaitForSeconds(reloadTime / 2);
         }
         else {
-            reload.pitch = 1f;
-            yield return new WaitForSeconds(reloadTime); 
+            yield return new WaitForSeconds(reloadTime);
         }
-        
+
         float ammoNeeded = magazineSize - magazine;
         float ammoToTransfer = Mathf.Min(ammoNeeded, reserve);
-        magazine += ammoToTransfer; 
-        reserve -= ammoToTransfer;  
+        magazine += ammoToTransfer;
+        reserve -= ammoToTransfer;
         isReloading = false;
         Gun.Rotate(45f, 0f, 0f, Space.Self);
         SetText();
     }
     void SetText() {
-        ammoTex.text = magazine.ToString() + "/" + reserve.ToString(); 
+        ammoTex.text = magazine.ToString() + "/" + reserve.ToString();
     }
 }
