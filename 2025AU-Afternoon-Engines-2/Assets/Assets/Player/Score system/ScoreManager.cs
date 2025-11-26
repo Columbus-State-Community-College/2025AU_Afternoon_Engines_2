@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        currentScore = 10000;
+        currentScore = 0;
         UpdateUI();
     }
 

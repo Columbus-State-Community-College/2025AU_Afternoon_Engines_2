@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  detectionRange: 25
+  detectionRange: 1000
   chaseSpeed: 2.1
   idleSpeed: 0
   bounceForce: 2
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8588cc8918c5d4eb4a69ee8bc722b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 275
+  maxHealth: 1000
   waveSpawner: {fileID: 0}
   myWave:
     enemies: []

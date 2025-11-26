@@ -105,6 +105,13 @@ public class waveSpawner : MonoBehaviour
                 zh.myWave = currentWave;
             }
 
+            BossHealth bh = newEnemy.GetComponent<BossHealth>();
+            if (bh != null)
+            {
+                bh.waveSpawner = this;
+                bh.myWave = currentWave;
+            }
+
             // play zombie sound
             ZombieSound zs = newEnemy.GetComponent<ZombieSound>();
             if (zs != null)
