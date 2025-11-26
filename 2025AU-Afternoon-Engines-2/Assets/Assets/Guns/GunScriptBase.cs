@@ -25,7 +25,9 @@ public class GunScriptBase : MonoBehaviour
 
     void Start()
     {
-        
+
+        reserve = 500;
+
         SetText();
     }
 
