@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1574364265194603669}
   - component: {fileID: 6131012087138523234}
   - component: {fileID: 7801253314581360014}
+  - component: {fileID: 679965120798998865}
   m_Layer: 0
   m_Name: PlayerGun
   m_TagString: Untagged
@@ -50,7 +51,6 @@ MonoBehaviour:
   bullet: {fileID: -717053333052519013, guid: c51079701ccf65a438c4c985be8cd7d6, type: 3}
   magazine: 7
   magazineSize: 7
-  reserve: 100
   reloadTime: 2.3
   accuracy: 0.1
   bulletForce: 4000
@@ -4933,6 +4933,21 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &679965120798998865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374103553360055735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ce1b6e97860d345a9b9038ef89ecfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSFX: GunShoot1
+  reloadSFX: GunReload1
+  emptySFX: GunEmpty
 --- !u!1 &1844421988744476238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,6 +5098,8 @@ MonoBehaviour:
   hitDamageMultiplier: 1
   healthTex: {fileID: 0}
   healthBar: {fileID: 0}
+  doubleHealthBar: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!114 &8268778694464261083
 MonoBehaviour:
   m_ObjectHideFlags: 0
