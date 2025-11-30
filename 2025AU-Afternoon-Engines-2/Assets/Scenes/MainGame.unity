@@ -4873,6 +4873,14 @@ PrefabInstance:
       value: Maybe3
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[9].name
+      value: soda_drink
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[10].name
+      value: soda_drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[12].name
       value: reload 1
       objectReference: {fileID: 0}
@@ -5626,7 +5634,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1398166510096667578, guid: 05579840a71e0454984fcf92f6de4c5f, type: 3}
+    - {fileID: 2696125863971694339, guid: 05579840a71e0454984fcf92f6de4c5f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
