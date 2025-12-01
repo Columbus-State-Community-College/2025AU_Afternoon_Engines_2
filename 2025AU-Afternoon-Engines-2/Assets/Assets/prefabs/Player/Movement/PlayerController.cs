@@ -59,6 +59,15 @@ public class PlayerController : MonoBehaviour
         air
     }
 
+    private InputSystems controls;
+
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+
+    private bool jumpPressed;
+    private bool sprintPressed;
+    private bool crouchPressed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -68,6 +77,42 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
 
         startYScale = transform.localScale.y;
+    }
+
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        controls = new InputSystems();
+
+        // movement
+        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
+
+        // looking
+        controls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+        controls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+
+        // jumping
+        controls.Player.Jump.performed += ctx => jumpPressed = true;
+
+        // sprint
+        controls.Player.Sprint.performed += ctx => sprintPressed = true;
+        controls.Player.Sprint.canceled += ctx => sprintPressed = false;
+
+        // crouch
+        controls.Player.Crouch.performed += ctx => crouchPressed = true;
+        controls.Player.Crouch.canceled += ctx => crouchPressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     private void Update()
@@ -106,26 +151,25 @@ public class PlayerController : MonoBehaviour
 
     private void MyInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = moveInput.x;
+        verticalInput = moveInput.y;
 
         // when jump key is pressed
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (jumpPressed && readyToJump && grounded)
         {
             readyToJump = false;
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+        jumpPressed = false;
 
-        // start crouch
-        if (Input.GetKeyDown(crouchKey))
+        // crouch
+        if (crouchPressed)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
         }
-
-        // stop crouch
-        if (Input.GetKeyUp(crouchKey))
+        else
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
@@ -141,12 +185,12 @@ public class PlayerController : MonoBehaviour
         }
 
         // mode - sprinting
-        else if (Input.GetKey(sprintKey) && stamina > 0)
+        else if (sprintPressed && stamina > 0)
         {
             movementState = MovementState.sprinting;
             moveSpeed = sprintSpeed;
 
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            if (moveInput != Vector2.zero)
             {
                 stamina -= runCost * Time.deltaTime;
                 if (stamina < 0)
