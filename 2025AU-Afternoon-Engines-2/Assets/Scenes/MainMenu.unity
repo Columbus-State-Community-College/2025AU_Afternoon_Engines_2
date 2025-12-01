@@ -2065,21 +2065,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player Movement: W, A, S, D
+  m_text: 'Player Movement: W, A, S, D - (Move Left Joystick)
 
-    Camera Movement: Mouse
+    Camera Movement:
+    Mouse - (Move Right Joystick)
 
-    Sprint: Left
-    Shift
+    Sprint: Left Shift - (Press Left Joystick)
 
-    Jump: Space
+    Jump:
+    Space - (A/Cross)
 
-    Crouch: Left Ctrl
+    Crouch: Left Ctrl - (B/Circle)
 
     Shoot: Left Click
+    - (Right Trigger)
 
-    Interact:
-    E
+    Interact: E - (Y/Triangle)
 
 '
   m_isRightToLeft: 0
