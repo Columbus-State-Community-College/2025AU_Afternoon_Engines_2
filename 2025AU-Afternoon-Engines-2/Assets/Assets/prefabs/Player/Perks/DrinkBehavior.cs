@@ -15,7 +15,7 @@ public class DrinkBehavior : MonoBehaviour
     public TextMeshProUGUI promptTex;
 
     private float drinkDuration = 3f;
-    private bool isDrinking = false;
+    public static bool isDrinking = false;
     // NEW — soda sound script
     private SodaSound sodaSound;
     

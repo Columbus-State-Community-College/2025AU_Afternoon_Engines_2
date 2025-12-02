@@ -33,7 +33,6 @@ public class AssaultRifle : MonoBehaviour
     {
         // assign sound wrapper
         gunSound = GetComponent<GunSound>();
-
         reserve = 500;
         SetText();
     }

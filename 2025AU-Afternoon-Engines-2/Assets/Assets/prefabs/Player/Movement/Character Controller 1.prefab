@@ -5132,6 +5132,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2246533225138363333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8120045567201861500}
+  m_Layer: 0
+  m_Name: Guns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8120045567201861500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246533225138363333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7057449826072625429}
+  - {fileID: 7749073282080806236}
+  m_Father: {fileID: 8054869326260481107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2617241118958938224
 GameObject:
   m_ObjectHideFlags: 0
@@ -10574,7 +10607,7 @@ Transform:
   m_Children:
   - {fileID: 119536511090137038}
   - {fileID: 8619595653817497864}
-  m_Father: {fileID: 8054869326260481107}
+  m_Father: {fileID: 8120045567201861500}
   m_LocalEulerAnglesHint: {x: 0, y: -2.405, z: 0}
 --- !u!1 &7690680955836816303
 GameObject:
@@ -10607,7 +10640,7 @@ Transform:
   m_Children:
   - {fileID: 1010148130802484920}
   - {fileID: 3683121980143073607}
-  m_Father: {fileID: 8054869326260481107}
+  m_Father: {fileID: 8120045567201861500}
   m_LocalEulerAnglesHint: {x: 0, y: -2.405, z: 0}
 --- !u!1 &7707900959465506560
 GameObject:
@@ -10642,8 +10675,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7057449826072625429}
-  - {fileID: 7749073282080806236}
+  - {fileID: 8120045567201861500}
   m_Father: {fileID: 1420333474918414818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1326350665398963245
