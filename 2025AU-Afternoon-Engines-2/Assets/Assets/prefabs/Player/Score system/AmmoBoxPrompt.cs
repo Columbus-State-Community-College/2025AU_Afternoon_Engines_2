@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class AmmoBoxPrompt : MonoBehaviour
@@ -8,9 +9,32 @@ public class AmmoBoxPrompt : MonoBehaviour
 
     private float inteRange = 3f;
 
+    private InputSystems controls;
+    private bool interactPressed;
+
+
     void Start()
     {
         setText();
+    }
+
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        // Set interact button
+        controls.Player.Interact.performed += ctx => interactPressed = true;
+        controls.Player.Interact.canceled += ctx => interactPressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     void Update()
@@ -22,12 +46,13 @@ public class AmmoBoxPrompt : MonoBehaviour
         {
             promptTex.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (interactPressed)
             {                       // modified by thomas
                 if (ScoreManager.instance.SpendPoints(1250))
                 {
                     GunScriptBase.reserve = GunScriptBase.maxReserve;
                 }
+                interactPressed = false;
             }
         }
         else
@@ -50,6 +75,6 @@ public class AmmoBoxPrompt : MonoBehaviour
 
     void setText()
     {
-        promptTex.text = "Press E to Buy Ammo (1250)";
+        promptTex.text = "Press the 'Interact' Key to Buy Ammo (1250)";
     }
 }

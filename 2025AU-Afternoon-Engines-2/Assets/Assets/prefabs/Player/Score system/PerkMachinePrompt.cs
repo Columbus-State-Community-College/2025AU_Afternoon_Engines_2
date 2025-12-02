@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class PerkMachinePrompt : MonoBehaviour
@@ -12,9 +13,32 @@ public class PerkMachinePrompt : MonoBehaviour
     public static int perkChosen = 0;
     // 0: Nothing, 1: DoubleHealth, 2: FasterMovement, 3: SpeedReload
 
+    private InputSystems controls;
+    private bool interactPressed;
+
+
     void Start()
     {
         setText();
+    }
+
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        // interact button
+        controls.Player.Interact.performed += ctx => interactPressed = true;
+        controls.Player.Interact.canceled += ctx => interactPressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     void Update()
@@ -26,9 +50,9 @@ public class PerkMachinePrompt : MonoBehaviour
         {
             promptTex.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (interactPressed)
             {
-                // Require 3000 pts to use modified by thomas
+                // Require 3000 pts to use
                 if (ScoreManager.instance.SpendPoints(3000))
                 {
                     bool hasHealthPerk = PerkChecker.hasDoubleHealth;
@@ -40,6 +64,7 @@ public class PerkMachinePrompt : MonoBehaviour
                     {
                         gamble();
                     }
+                    interactPressed = false;
                 }
             }
         }
@@ -88,7 +113,7 @@ public class PerkMachinePrompt : MonoBehaviour
     }
 
     void setText()
-    {                       // modified by thomas
-        promptTex.text = "Press E to Buy Perk (3000)";
+    {
+        promptTex.text = "Press the 'Interact' Key to Buy Perk (3000)";
     }
 }

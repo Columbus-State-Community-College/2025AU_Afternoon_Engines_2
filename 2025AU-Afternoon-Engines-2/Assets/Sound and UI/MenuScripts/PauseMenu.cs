@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,14 +11,38 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public static float lastUnpauseTime;
 
+    private InputSystems controls;
+    private bool pausePressed;
+
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        // Assign pause button (e.g., Start or Options on controller)
+        controls.Player.Pause.performed += ctx => pausePressed = true;
+        controls.Player.Pause.canceled += ctx => pausePressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pausePressed)
         {
             if (isPaused)
                 ResumeGame();
             else
                 PauseGame();
+
+            pausePressed = false;
         }
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class RubblePrompt : MonoBehaviour
@@ -9,9 +10,31 @@ public class RubblePrompt : MonoBehaviour
     private float inteRange = 3f;
     private bool isLookingAway = true;
 
+    private InputSystems controls;
+    private bool interactPressed;
+
     void Start()
     {
         setText();
+    }
+
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        // interact button
+        controls.Player.Interact.performed += ctx => interactPressed = true;
+        controls.Player.Interact.canceled += ctx => interactPressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     void Update()
@@ -26,7 +49,7 @@ public class RubblePrompt : MonoBehaviour
             promptTex.gameObject.SetActive(true);
             isLookingAway = true;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (interactPressed)
             {
                 // Use ScoreManager for UI update modified by thomas
                 if (ScoreManager.instance.SpendPoints(300))
@@ -34,6 +57,7 @@ public class RubblePrompt : MonoBehaviour
                     promptTex.gameObject.SetActive(false);
                     parent.SetActive(false);
                 }
+                interactPressed = false;
             }
         }
         else if (isLookingAway)
@@ -57,6 +81,6 @@ public class RubblePrompt : MonoBehaviour
 
     void setText()
     {
-        promptTex.text = "Press E to Remove Rubble (300)";
+        promptTex.text = "Press the 'Interact' Key to Remove Rubble (300)";
     }
 }
