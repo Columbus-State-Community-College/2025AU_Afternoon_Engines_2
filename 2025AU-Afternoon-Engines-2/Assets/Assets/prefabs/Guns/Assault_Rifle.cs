@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
 
@@ -24,6 +25,10 @@ public class AssaultRifle : MonoBehaviour
     // NEW sound system component
     private GunSound gunSound;
 
+    private InputSystems controls; // Added controller support
+    private bool firePressed;
+    private bool reloadPressed;
+
     void Start()
     {
         // assign sound wrapper
@@ -33,13 +38,36 @@ public class AssaultRifle : MonoBehaviour
         SetText();
     }
 
+    private void Awake()
+    {
+        controls = new InputSystems();
+
+        // Set booleans in callbacks for controller buttons
+        controls.Player.Fire.performed += ctx => firePressed = ctx.ReadValue<float>() > 0.5f;
+        controls.Player.Fire.canceled += ctx => firePressed = false;
+
+
+        controls.Player.Reload.performed += ctx => reloadPressed = true;
+        controls.Player.Reload.canceled += ctx => reloadPressed = false;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     void Update()
     {
         if (PauseMenu.GameIsPaused || Time.unscaledTime - PauseMenu.lastUnpauseTime < 0.1f)
             return;
 
         // SHOOT
-        if (Input.GetMouseButton(0)) { //fires the gun, with a certain accuracy.
+        if (firePressed) { //fires the gun, with a certain accuracy.
             if (magazine > 0 && !isReloading && cooldown <= 0)
             {
                 if (gunSound != null) gunSound.PlayShoot();
@@ -55,7 +83,6 @@ public class AssaultRifle : MonoBehaviour
                 magazine -= 1;
                 SetText();
             }
-
         }
         if (cooldown > 0)
             {
@@ -63,8 +90,10 @@ public class AssaultRifle : MonoBehaviour
             }
         // RELOAD
         if (magazine < magazineSize && reserve > 0 && !isReloading){
-            if (Input.GetKeyDown(KeyCode.R)){
+            if (reloadPressed)
+            {
                 StartCoroutine(Reload());
+                reloadPressed = false; //reset controller input
             }
         }
     }
