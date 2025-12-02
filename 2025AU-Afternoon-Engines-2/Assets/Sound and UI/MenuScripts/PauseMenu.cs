@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject playerUI;
     public GameObject firstButton;
     public GameObject pauseMenuUI;
-    
+    public GameObject controlsMenuUI;
+
     private bool isPaused = false;
     public static bool GameIsPaused = false;
     public static float lastUnpauseTime;
@@ -101,5 +102,20 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenControlsPanel()
+    {
+        if (controlsMenuUI != null)
+            controlsMenuUI.SetActive(true);
+            pauseMenuUI.SetActive(false);// hide pause menu
+
+    }
+
+    public void CloseControlsPanel()
+    {
+        if (controlsMenuUI != null)
+            controlsMenuUI.SetActive(false);
+            pauseMenuUI.SetActive(true); // unhide pause menu
     }
 }
