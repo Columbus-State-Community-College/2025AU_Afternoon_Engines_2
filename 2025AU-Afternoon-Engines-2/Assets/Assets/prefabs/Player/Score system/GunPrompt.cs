@@ -92,11 +92,15 @@ public class GunPrompt : MonoBehaviour
             GunHandler.hasBolt = false;
             GunHandler.hasPistol = false;
             GunHandler.hasAR = true;
+            GunScriptBase.reserve = 200;
+            GunScriptBase.maxReserve = 200;
         }
         if (gunType == 2) {
             GunHandler.hasBolt = true;
             GunHandler.hasPistol = false;
             GunHandler.hasAR = false;
+            GunScriptBase.reserve = 35;
+            GunScriptBase.maxReserve = 35;
         }
     }
 }

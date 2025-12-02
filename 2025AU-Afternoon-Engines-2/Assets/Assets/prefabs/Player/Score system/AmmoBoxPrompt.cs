@@ -51,6 +51,8 @@ public class AmmoBoxPrompt : MonoBehaviour
                 if (ScoreManager.instance.SpendPoints(1250))
                 {
                     GunScriptBase.reserve = GunScriptBase.maxReserve;
+                    BoltActionRifle.reserve = GunScriptBase.maxReserve;
+                    AssaultRifle.reserve = GunScriptBase.maxReserve;
                 }
                 interactPressed = false;
             }

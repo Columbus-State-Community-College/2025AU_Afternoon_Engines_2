@@ -3,16 +3,16 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
 
-public class AssaultRifle : MonoBehaviour
+public class BoltActionRifle : MonoBehaviour
 {
     public Rigidbody bullet;
-    public float magazine = 20; // How much ammo the magazine starts with.
+    public float magazine = 3; // How much ammo the magazine starts with.
     public float magazineSize = 3; // The maximum amount of ammo that can be reloaded into the gun
     public static float reserve = 500; // The ammo that gets reloaded from the gun.
     public static float maxReserve = 500;
 
     public static bool isReloading = false; 
-    public float reloadTime = 2.3f; 
+    public float reloadTime = 3f; 
     public float accuracy = 1.0f; 
     public float bulletForce = 1500f; 
     private float cooldown = 0f;
@@ -72,7 +72,7 @@ public class AssaultRifle : MonoBehaviour
                 if (gunSound != null) gunSound.PlayShoot();
 
                 // old effect unchanged
-                cooldown = 0.1f;
+                cooldown = 1f;
                 muzzleFlash.Play();
                 float horizontalSpread = Random.Range(-accuracy, accuracy);
                 float verticalSpread = Random.Range(-accuracy, accuracy);

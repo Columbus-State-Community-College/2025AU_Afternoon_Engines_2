@@ -15,7 +15,13 @@ public class Bullet : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        if (GunHandler.hasBolt){
+            damage = 100;
+        }
+        else {
+            damage = 20;
+        }
         if (lifeTime > 0) { //Deletes the bullet after 5 seconds without touching anything
             lifeTime -= Time.deltaTime;
             }
