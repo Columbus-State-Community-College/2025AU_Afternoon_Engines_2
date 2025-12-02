@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject playerUI;
+    public GameObject firstButton;
     public GameObject pauseMenuUI;
     
     private bool isPaused = false;
@@ -67,6 +69,10 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0f; // Freeze game
         isPaused = true;
+
+        EventSystem.current.SetSelectedGameObject(null); // clear
+        EventSystem.current.SetSelectedGameObject(firstButton);
+
         GameIsPaused = true;
 
         AudioListener.pause = true; // stop sound when game is paused
