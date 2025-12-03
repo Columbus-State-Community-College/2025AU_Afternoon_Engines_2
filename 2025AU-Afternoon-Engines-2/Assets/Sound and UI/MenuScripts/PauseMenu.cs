@@ -21,30 +21,30 @@ public class PauseMenu : MonoBehaviour
     {
         controls = new InputSystems();
 
-        // Assign pause button (e.g., Start or Options on controller)
+        // assign pause button
         controls.Player.Pause.performed += ctx => pausePressed = true;
         controls.Player.Pause.canceled += ctx => pausePressed = false;
     }
 
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Disable();
-    }
+    private void OnEnable() { controls.Enable(); }
+    private void OnDisable() { controls.Disable(); }
 
     void Update()
     {
         if (pausePressed)
         {
-            if (isPaused)
-                ResumeGame();
+            // only toggle if controls menu isn't open
+            if (controlsMenuUI != null && controlsMenuUI.activeSelf)
+            {
+                // keep game paused in controls
+            }
             else
-                PauseGame();
-
+            {
+                if (isPaused)
+                    ResumeGame();
+                else
+                    PauseGame();
+            }
             pausePressed = false;
         }
     }
@@ -52,7 +52,9 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f; // Resume time
+        controlsMenuUI.SetActive(false);
+
+        Time.timeScale = 1f;
         isPaused = false;
 
         AudioListener.pause = false; // resume sound with game
@@ -67,11 +69,12 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
+        controlsMenuUI.SetActive(false); // hide controls if open
 
-        Time.timeScale = 0f; // Freeze game
+        Time.timeScale = 0f;
         isPaused = true;
 
-        EventSystem.current.SetSelectedGameObject(null); // clear
+        EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
 
         GameIsPaused = true;
@@ -85,7 +88,6 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-
         GameIsPaused = false;
         lastUnpauseTime = Time.unscaledTime; // prevents fire when clicking in the menu
         GunScriptBase.isReloading = false;
@@ -95,6 +97,7 @@ public class PauseMenu : MonoBehaviour
         PerkChecker.hasDoubleHealth = false;
         PerkChecker.hasSpeedReload = false;
         PerkChecker.hasFasterMovement = false;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -108,14 +111,43 @@ public class PauseMenu : MonoBehaviour
     {
         if (controlsMenuUI != null)
             controlsMenuUI.SetActive(true);
-            pauseMenuUI.SetActive(false);// hide pause menu
 
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(false); // hide pause menu
+
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // set default selected button
+        if (firstButton != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
     }
 
     public void CloseControlsPanel()
     {
         if (controlsMenuUI != null)
             controlsMenuUI.SetActive(false);
-            pauseMenuUI.SetActive(true); // unhide pause menu
+
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(true); // return to pause menu
+
+        Time.timeScale = 0f; // keep game paused
+        GameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // set default selected button in pause menu
+        if (firstButton != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
     }
 }
