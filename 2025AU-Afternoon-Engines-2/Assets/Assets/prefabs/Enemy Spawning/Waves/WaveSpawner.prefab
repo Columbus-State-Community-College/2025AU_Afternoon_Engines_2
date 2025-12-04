@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1beac3af09f35ca4eb57c87af0f44c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 10
+  countdown: 30
   spawnPoints:
   - {fileID: 5893623589578307246}
   - {fileID: 2064068024517293349}
@@ -401,6 +401,22 @@ MonoBehaviour:
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    timeToNextEnemy: 1
+    timeToNextWave: 10
+    enemiesLeft: 0
+  - enemies:
+    - {fileID: 5040134370578716594, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+    timeToNextEnemy: 1
+    timeToNextWave: 10
+    enemiesLeft: 0
+  - enemies:
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
@@ -408,6 +424,9 @@ MonoBehaviour:
     timeToNextWave: 10
     enemiesLeft: 0
   - enemies:
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
+    - {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - {fileID: 5040134370578716594, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
     timeToNextEnemy: 1
     timeToNextWave: 10
