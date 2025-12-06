@@ -49,23 +49,27 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused) return;
+
         Vector2 currentLook = lookInput;
 
-        // Detect if current device is a mouse
         if (Mouse.current != null && Mouse.current.wasUpdatedThisFrame)
         {
-            currentLook *= 0.15f; // scale mouse movement
+            float mouseX = currentLook.x * mouseSensX;
+            float mouseY = currentLook.y * mouseSensY;
+
+            yRotation += mouseX;
+            xRotation -= mouseY;
         }
         else
         {
-            currentLook *= 1f; // controller sticks are already small
+            float controllerX = currentLook.x * controllerSensX * Time.deltaTime;
+            float controllerY = currentLook.y * controllerSensY * Time.deltaTime;
+
+            yRotation += controllerX;
+            xRotation -= controllerY;
         }
 
-        float mouseX = currentLook.x * Time.deltaTime * controllerSensX;
-        float mouseY = currentLook.y * Time.deltaTime * controllerSensY;
-
-        yRotation += mouseX;
-        xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);

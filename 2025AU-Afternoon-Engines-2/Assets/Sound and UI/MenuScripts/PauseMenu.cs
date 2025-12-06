@@ -16,6 +16,17 @@ public class PauseMenu : MonoBehaviour
 
     private InputSystems controls;
 
+    [Header("Sensitivity Settings")]
+    [Range(0.01f, 1f)]
+    public float mouseSensX = 0.15f;
+    [Range(0.01f, 1f)]
+    public float mouseSensY = 0.15f;
+
+    [Range(50f, 800f)]
+    public float controllerSensX = 400f;
+    [Range(50f, 800f)]
+    public float controllerSensY = 400f;
+
     private void Awake()
     {
         controls = new InputSystems();
