@@ -5479,7 +5479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.8, y: 64}
+  m_AnchoredPosition: {x: -25.2, y: 59}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567703069
@@ -8004,22 +8004,6 @@ PrefabInstance:
       propertyPath: ammoTex
       value: 
       objectReference: {fileID: 1666939305}
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: mouseSensX
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: mouseSensY
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: controllerSensX
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 853224860212052566, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: controllerSensY
-      value: 2000
-      objectReference: {fileID: 0}
     - target: {fileID: 1228300428342029311, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: healthBar
       value: 
@@ -8095,14 +8079,6 @@ PrefabInstance:
     - target: {fileID: 4755470937559368581, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: m_Name
       value: Character Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453778145848462366, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690680955836816303, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8268778694464261083, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: pMachine

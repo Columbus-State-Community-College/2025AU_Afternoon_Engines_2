@@ -15655,7 +15655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7749073282080806236
 Transform:
   m_ObjectHideFlags: 0
@@ -15688,7 +15688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7057449826072625429
 Transform:
   m_ObjectHideFlags: 0
@@ -15860,10 +15860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57aa1cd44c9c0c145aebb2caa5b44eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensX: 0.15
-  mouseSensY: 0.15
-  controllerSensX: 700
-  controllerSensY: 700
+  mouseSensX: 0.2
+  mouseSensY: 0.2
+  controllerSensX: 2000
+  controllerSensY: 2000
   orientation: {fileID: 7543631034952347039}
 --- !u!1 &7765691556921264948
 GameObject:
@@ -15971,7 +15971,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

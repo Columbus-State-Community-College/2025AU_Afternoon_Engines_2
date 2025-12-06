@@ -8,8 +8,8 @@ public class GunScriptBase : MonoBehaviour
     public Rigidbody bullet;
     public float magazine = 7; // How much ammo the magazine starts with.
     public float magazineSize = 7; // The maximum amount of ammo that can be reloaded into the gun
-    public static float reserve = 100; // The ammo that gets reloaded from the gun.
-    public static float maxReserve = 100;
+    public static float reserve = 150; // The ammo that gets reloaded from the gun.
+    public static float maxReserve = 150;
 
     public static bool isReloading = false;
     public float reloadTime = 2.3f;
@@ -33,7 +33,7 @@ public class GunScriptBase : MonoBehaviour
         // assign sound wrapper
         gunSound = GetComponent<GunSound>();
 
-        reserve = 100;
+        reserve = 150;
         SetText();
     }
 
