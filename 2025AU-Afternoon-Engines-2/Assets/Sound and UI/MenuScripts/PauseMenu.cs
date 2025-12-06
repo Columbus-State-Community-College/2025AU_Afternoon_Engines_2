@@ -103,6 +103,8 @@ public class PauseMenu : MonoBehaviour
         PerkChecker.hasDoubleHealth = false;
         PerkChecker.hasSpeedReload = false;
         PerkChecker.hasFasterMovement = false;
+
+        SceneManager.LoadScene("MainGame");
     }
 
     public void LoadMainMenu()
