@@ -12,23 +12,33 @@ public class BossAttack : MonoBehaviour
     public float logInterval = 30f;
 
     private float logTimer = 0f;
-    private Transform player;
+    private Transform player;           // The actual transform we attack
+    private PlayerHealth playerHealth;  // Cached PlayerHealth
     private float lastAttackTime;
 
     void Start()
     {
-        // Attempt to find player by tag
-        player = GameObject.FindWithTag("Player").transform;
-//      Debug.Log("[BossAttack] Start() — Player assigned: " + player.name);
+        // Find PlayerObject (tagged "Player")
+        Transform taggedPlayer = GameObject.FindWithTag("Player").transform;
+
+        // PlayerHealth is on a parent (Player), so walk up
+        playerHealth = taggedPlayer.GetComponentInParent<PlayerHealth>();
+
+        if (playerHealth == null)
+        {
+//            Debug.LogError("[BossAttack] ERROR — Could not find PlayerHealth on Player or its parents!");
+            return;
+        }
+
+        player = playerHealth.transform;
+
+//        Debug.Log("[BossAttack] Start() — Player assigned: " + player.name);
     }
 
     void Update()
     {
-        if (player == null)
-        {
-//            Debug.LogWarning("[BossAttack] Player reference is NULL");
+        if (player == null || playerHealth == null)
             return;
-        }
 
         float distance = Vector3.Distance(transform.position, player.position);
 
@@ -41,32 +51,12 @@ public class BossAttack : MonoBehaviour
 
         if (distance <= attackRange)
         {
-            if (logTimer == 0f)
-//                Debug.Log("[BossAttack] Player is inside attack range");
-
             if (Time.time >= lastAttackTime + attackCooldown)
             {
                 lastAttackTime = Time.time;
 //                Debug.Log("[BossAttack] ATTACK EXECUTED!");
 
-                PlayerHealth health = player.GetComponent<PlayerHealth>();
-                if (health != null)
-                {
-//                    Debug.Log("[BossAttack] Calling PlayerHealth.PlayerDamage(" + attackDamage + ")");
-                    health.PlayerDamage(attackDamage);
-                }
-                else
-                {
-//                    Debug.LogWarning("[BossAttack] PlayerHealth script NOT FOUND");
-                }
-            }
-            else
-            {
-                float cd = (lastAttackTime + attackCooldown) - Time.time;
-
-                if (logTimer == 0f)
-//                    Debug.Log("[BossAttack] Attack on cooldown: " + cd.ToString("F2") + " seconds remaining");
-                    {} // <----- dont know why there are need but will error with out them
+                playerHealth.PlayerDamage(attackDamage);
             }
         }
     }

@@ -267,8 +267,8 @@ GameObject:
   - component: {fileID: 6778522075237914001}
   - component: {fileID: 4181068698158863619}
   - component: {fileID: 218816596624734755}
-  - component: {fileID: 2939904994086766347}
   - component: {fileID: 4097269734771921561}
+  - component: {fileID: 2939904994086766347}
   - component: {fileID: 1957028198336869764}
   - component: {fileID: -5562244588077157543}
   m_Layer: 0
@@ -424,6 +424,18 @@ MonoBehaviour:
     timeToNextEnemy: 0
     timeToNextWave: 0
     enemiesLeft: 0
+--- !u!114 &4097269734771921561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632102979795713088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f470528c0f82dc47b9b131857317537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &2939904994086766347
 AudioSource:
   m_ObjectHideFlags: 0
@@ -521,18 +533,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4097269734771921561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6632102979795713088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f470528c0f82dc47b9b131857317537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1957028198336869764
 MonoBehaviour:
   m_ObjectHideFlags: 0

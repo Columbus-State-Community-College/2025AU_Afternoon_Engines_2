@@ -7658,9 +7658,17 @@ PrefabInstance:
       propertyPath: timeUntilNextWaveText
       value: 
       objectReference: {fileID: 36336124}
+    - target: {fileID: 3971534942574156091, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
+      propertyPath: 'waves.Array.data[0].enemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1957028198336869764, guid: bb2bb8cc6f620a442af5cad85c499ea1, type: 3}
     - target: {fileID: 5831554190608935550, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
       propertyPath: m_Name
       value: WaveSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831554190608935550, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7255523472023168958, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
       propertyPath: m_LocalPosition.x

@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Damage Settings")] 
     public float meleeDamage = 34f; // editable in Inspector 
     public float hitDamageMultiplier = 1f; // optional balancing multiplier 
-   
+
     public TextMeshProUGUI healthTex;
     public Image healthBar;
     public Image doubleHealthBar;
@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-//        Debug.Log("[PlayerHealth] Start — Initial Health: " + playerHealth); // added by Thomas for testing
+        Debug.Log("[PlayerHealth] Start — Initial Health: " + playerHealth);
         setHealthUI();
     }
 
@@ -31,25 +31,25 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if (regenTime <= 0f && playerHealth > 0 && playerHealth < maxHealth * PerkChecker.HealthPerkMult) {
-           heal();
+            heal();
         }
         else if (playerHealth > maxHealth * PerkChecker.HealthPerkMult) {
             playerHealth -= 1;
         }
         tick();
-
     }
     private void heal() {
-            playerHealth += 0.125f * PerkChecker.HealthPerkMult;
-            setHealthUI();
+        playerHealth += 0.125f * PerkChecker.HealthPerkMult;
+        setHealthUI();
     }
 
-    // NEW: external zombie damage
-    public void PlayerDamage(float amount) // added by Thomas
+    // ======================================================
+    // NEW/working DAMAGE SYSTEM — USED BY ZombieAttack & BossAttack we had 2 at the saym time
+    public void PlayerDamage(float amount)
     {
-        float finalDamage = amount * hitDamageMultiplier; // allows balancing 
+        float finalDamage = amount * hitDamageMultiplier;
 
-//        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called"); 
+        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called");
 
         if (playerHealth > 0 && iframes <= 0)
         {
@@ -57,20 +57,23 @@ public class PlayerHealth : MonoBehaviour
             regenTime = 6f;
             iframes = 0.8f;
 
-//            Debug.Log("[PlayerHealth] Took " + finalDamage + " damage — Health now: " + playerHealth); 
+            Debug.Log("[PlayerHealth] Took " + finalDamage + " damage — Health now: " + playerHealth);
             setHealthUI();
         }
         else
         {
-//            Debug.Log("[PlayerHealth] Damage ignored (iFrames active)"); 
+            Debug.Log("[PlayerHealth] Damage ignored (iFrames active)");
         }
     }
 
-    // OLD damage logic — used for trigger-based melee hits
+    // ====================================================================
+    //  OLD DAMAGE SYSTEM — TRIGGER-BASED MELEE DAMAGE (NOW DISABLED)
+    //  This existed before ZombieAttack/BossAttack scripts handled attacks.
+    /*
     public void PlayerDamage() {
         if (playerHealth > 0 && iframes <= 0) {
 
-//            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); // added by Thomas 
+            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage);
 
             playerHealth -= meleeDamage; // editable in Inspector
             regenTime = 4f;
@@ -83,7 +86,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerHealth > 0 && iframes <= 0)
         {
-//            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage); 
+            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage);
 
             playerHealth -= meleeDamage; // editable in Inspector
             regenTime = 4f;
@@ -94,36 +97,31 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
-
-//        Debug.Log("[PlayerHealth] OnTriggerStay detected with: " + other.name); // added by Thomas for testing
+    Debug.Log("[PlayerHealth] OnTriggerStay detected with: " + other.name);// added by Thomas for testing
 
         if (other.gameObject.CompareTag("Enemy") && iframes <= 0) {
-
-//            Debug.Log("[PlayerHealth] Attempting melee damage"); // added by Thomas for testing
-
-
+        Debug.Log("[PlayerHealth] Attempting melee damage (OLD SYSTEM)"); // added by Thomas for testing
             PlayerDamage_Internal(); // uses meleeDamage
         }
     }
+    */
+    // END OF OLD DAMAGE SYSTEM (now disabled)
+    // ======================================================
+
     private void tick() {
-        if (regenTime > 0) {
+        if (regenTime > 0)
             regenTime -= Time.deltaTime;
-        }
-        if (iframes > 0) {
+        if (iframes > 0)
             iframes -= Time.deltaTime;
-        }
         if (playerHealth <= 0) {
-
             playerHealth = 0;
-//            Debug.Log("[PlayerHealth] PLAYER DIED!"); // added by Thomas for testing
-
+            Debug.Log("[PlayerHealth] PLAYER DIED!"); // added by Thomas for testing
             gun.SetActive(false);
             parent.SetActive(false);
 
             if (loseScreen != null)
             {
                 loseScreen.SetActive(true);
-
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Time.timeScale = 0f;
@@ -135,5 +133,4 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = playerHealth / 100;
         doubleHealthBar.fillAmount = (playerHealth - 100) / 100;
     }
-    
 }

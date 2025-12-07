@@ -5210,9 +5210,9 @@ GameObject:
   - component: {fileID: 8619595653817497864}
   - component: {fileID: 5177923780270591348}
   - component: {fileID: 7612534513554244528}
+  - component: {fileID: 8530303914509575996}
   - component: {fileID: 4214704912842678751}
   - component: {fileID: 7732460815195121214}
-  - component: {fileID: 8530303914509575996}
   m_Layer: 0
   m_Name: PlayerGun
   m_TagString: Untagged
@@ -10093,6 +10093,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &8530303914509575996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617241118958938224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff560f876aac3134db5dc85364dec6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4805206067961864578, guid: dad50d6a659ddd64b9e8aba8f7607885, type: 3}
+  magazine: 20
+  magazineSize: 20
+  reloadTime: 2.3
+  accuracy: 1
+  bulletForce: 4500
+  ammoTex: {fileID: 0}
+  muzzleFlash: {fileID: 7612534513554244528}
+  Gun: {fileID: 119536511090137038}
 --- !u!114 &4214704912842678751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10208,27 +10229,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8530303914509575996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2617241118958938224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff560f876aac3134db5dc85364dec6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 4805206067961864578, guid: dad50d6a659ddd64b9e8aba8f7607885, type: 3}
-  magazine: 20
-  magazineSize: 20
-  reloadTime: 2.3
-  accuracy: 1
-  bulletForce: 4500
-  ammoTex: {fileID: 0}
-  muzzleFlash: {fileID: 7612534513554244528}
-  Gun: {fileID: 119536511090137038}
 --- !u!1 &2860627930549308346
 GameObject:
   m_ObjectHideFlags: 0
@@ -10243,11 +10243,11 @@ GameObject:
   - component: {fileID: 1228300428342029311}
   - component: {fileID: 8268778694464261083}
   - component: {fileID: 4669371762826789472}
-  - component: {fileID: 195170952807845858}
   - component: {fileID: 6043097266569872062}
+  - component: {fileID: 195170952807845858}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10385,6 +10385,24 @@ MonoBehaviour:
   Pistol: {fileID: 7690680955836816303}
   AR: {fileID: 7453778145848462366}
   BoltActionRifle: {fileID: 1548640122562972263}
+--- !u!114 &6043097266569872062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860627930549308346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4c8908e1e944948ae32fb6cc2e8c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openCanSFX: soda_open
+  drinkSFX: soda_drink
+  dropCanSFX: soda_drop
+  openVol: 1
+  drinkVol: 1
+  dropVol: 1
 --- !u!82 &195170952807845858
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10482,24 +10500,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6043097266569872062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2860627930549308346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4c8908e1e944948ae32fb6cc2e8c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openCanSFX: soda_open
-  drinkSFX: soda_drink
-  dropCanSFX: soda_drop
-  openVol: 1
-  drinkVol: 1
-  dropVol: 1
 --- !u!1 &3675574143957179732
 GameObject:
   m_ObjectHideFlags: 0
@@ -15879,7 +15879,7 @@ GameObject:
   - component: {fileID: 6228556606000712880}
   m_Layer: 3
   m_Name: PlayerObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
