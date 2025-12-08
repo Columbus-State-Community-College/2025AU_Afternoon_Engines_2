@@ -85,7 +85,7 @@ public class GunPrompt : MonoBehaviour
     }
     void setText()
     {
-        promptTex.text = "Press the 'Interact' Key to buy " + gunName + "(" + cost.ToString() + ")";
+        promptTex.text = "Press E to buy " + gunName + " (" + cost.ToString() + ")";
     }
     void setGun() {
         if (gunType == 1) {

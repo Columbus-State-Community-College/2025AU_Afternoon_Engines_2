@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the 'Interact' key to purchase a Perk Soda
+  m_text: Press E to buy ammo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
   m_sharedMaterial: {fileID: -8164384941073757700, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
@@ -2901,7 +2901,7 @@ MonoBehaviour:
   cam: {fileID: 1324390993}
   promptTex: {fileID: 1773116208}
   otherGun: {fileID: 1648917855}
-  cost: 1000
+  cost: 2500
   gunType: 2
   gunName: Bolt Action Rifle
 --- !u!23 &811091086
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   cam: {fileID: 1324390993}
   promptTex: {fileID: 1773116208}
   otherGun: {fileID: 827497643}
-  cost: 2250
+  cost: 2000
   gunType: 1
   gunName: Assault Rifle
 --- !u!23 &1138549283
@@ -3823,7 +3823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the 'Interact' key to purchase a Perk Soda
+  m_text: Press E to purchase a perk soda
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
   m_sharedMaterial: {fileID: -8164384941073757700, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
@@ -6244,7 +6244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the 'Interact' key to purchase a Perk Soda
+  m_text: Press E to remove rubble
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
   m_sharedMaterial: {fileID: -8164384941073757700, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
@@ -6681,7 +6681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the 'Interact' key to purchase a Perk Soda
+  m_text: Press E to purchase the weapon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
   m_sharedMaterial: {fileID: -8164384941073757700, guid: 78d44921005dc4045b5ee93f2ae9d360, type: 2}
@@ -6746,7 +6746,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -36.135468, y: 0, z: -47.500305, w: 0}
+  m_margin: {x: -81.22513, y: 0, z: -117.822205, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

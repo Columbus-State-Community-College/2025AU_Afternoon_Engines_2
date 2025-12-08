@@ -114,6 +114,6 @@ public class PerkMachinePrompt : MonoBehaviour
 
     void setText()
     {
-        promptTex.text = "Press the 'Interact' Key to Buy Perk (3000)";
+        promptTex.text = "Press E to Buy Perk (3000)";
     }
 }
