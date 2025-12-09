@@ -6,11 +6,13 @@ public class AmmoBoxPrompt : MonoBehaviour
 {
     public Camera cam;
     public TextMeshProUGUI promptTex;
+    public TextMeshProUGUI ammoTex;
 
     private float inteRange = 3f;
 
     private InputSystems controls;
     private bool interactPressed;
+
 
 
     void Start()
@@ -53,6 +55,16 @@ public class AmmoBoxPrompt : MonoBehaviour
                     GunScriptBase.reserve = GunScriptBase.maxReserve;
                     BoltActionRifle.reserve = GunScriptBase.maxReserve;
                     AssaultRifle.reserve = GunScriptBase.maxReserve;
+
+                    if (GunHandler.hasBolt) {
+                        ammoTex.text = 3 + "/" + 35;
+                    }
+                    if (GunHandler.hasAR) {
+                        ammoTex.text = 20 + "/" + 200;
+                    }
+                    if (GunHandler.hasPistol) {
+                        ammoTex.text = 7 + "/" + 150;
+                    }
                 }
                 interactPressed = false;
             }

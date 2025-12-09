@@ -115,6 +115,10 @@ public class PauseMenu : MonoBehaviour
         PerkChecker.hasSpeedReload = false;
         PerkChecker.hasFasterMovement = false;
 
+        GunHandler.hasAR = false;
+        GunHandler.hasBolt = false;
+        GunHandler.hasPistol = true;
+
         SceneManager.LoadScene("MainGame");
     }
 
