@@ -4195,7 +4195,7 @@ MonoBehaviour:
   promptTex: {fileID: 1773116208}
   ammoTex: {fileID: 1666939305}
   otherGun: {fileID: 827497643}
-  cost: 0
+  cost: 5000
   gunType: 1
   gunName: Assault Rifle
 --- !u!23 &1138549283

@@ -529,8 +529,32 @@ PrefabInstance:
       value: Maybe3
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b951270549df0d74a8118df52dd264c3, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bc33dfafb47b804f944c44fdcbc32a8, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[11].name
-      value: soda_open 1
+      value: soda_open
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[12].name
+      value: reload 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[15].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b838577c3140e674fb0bb460322c62a7, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[15].name
+      value: gunshot 2
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.x

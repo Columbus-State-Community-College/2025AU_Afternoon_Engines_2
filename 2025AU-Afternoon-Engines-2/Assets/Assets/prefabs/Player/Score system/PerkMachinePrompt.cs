@@ -53,7 +53,7 @@ public class PerkMachinePrompt : MonoBehaviour
             if (interactPressed)
             {
                 // Require 3000 pts to use
-                if (ScoreManager.instance.SpendPoints(0))
+                if (ScoreManager.instance.SpendPoints(3000))
                 {
                     bool hasHealthPerk = PerkChecker.hasDoubleHealth;
                     bool hasSpeedPerk = PerkChecker.hasFasterMovement;
