@@ -873,6 +873,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2860627930549308346, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
   m_PrefabInstance: {fileID: 8013887764852464530}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &157311692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157311683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be6c40105abf8647ad2a6ad31533985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPerkIcon: {fileID: 1218353007}
+  speedPerkIcon: {fileID: 1606524369}
+  reloadPerkIcon: {fileID: 1409595017}
 --- !u!1001 &325379072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4180,7 +4195,7 @@ MonoBehaviour:
   promptTex: {fileID: 1773116208}
   ammoTex: {fileID: 1666939305}
   otherGun: {fileID: 827497643}
-  cost: 5000
+  cost: 0
   gunType: 1
   gunName: Assault Rifle
 --- !u!23 &1138549283
@@ -9035,10 +9050,14 @@ PrefabInstance:
       propertyPath: ammoTex
       value: 
       objectReference: {fileID: 1666939305}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1574364265194603669, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2860627930549308346, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 157311692}
   m_SourcePrefab: {fileID: 100100000, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
 --- !u!1001 &9049706190934832630
 PrefabInstance:

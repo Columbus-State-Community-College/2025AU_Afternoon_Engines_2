@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: musicTracks.Array.data[17].name
       value: Maybe3
       objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[11].name
+      value: soda_open 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 648

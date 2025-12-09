@@ -74,5 +74,8 @@ public class DrinkBehavior : MonoBehaviour
         reloadSoda.SetActive(false);
 
         isDrinking = false;
+        GunScriptBase.isReloading = false;
+        AssaultRifle.isReloading = false;
+        BoltActionRifle.isReloading = false;
     }
 }

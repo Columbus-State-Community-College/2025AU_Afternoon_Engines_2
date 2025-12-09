@@ -105,5 +105,8 @@ public class GunPrompt : MonoBehaviour
             GunScriptBase.maxReserve = 35;
             ammoTex.text = 3 + "/" + 35;
         }
+        GunScriptBase.isReloading = false;
+        AssaultRifle.isReloading = false;
+        BoltActionRifle.isReloading = false;
     }
 }
