@@ -234,7 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4c8908e1e944948ae32fb6cc2e8c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 1.5
+  openCanSFX: soda_open
+  drinkSFX: soda_drink
+  dropCanSFX: soda_drop
+  openVol: 1
+  drinkVol: 1
+  dropVol: 1
 --- !u!1 &7137718200362347791
 GameObject:
   m_ObjectHideFlags: 0
