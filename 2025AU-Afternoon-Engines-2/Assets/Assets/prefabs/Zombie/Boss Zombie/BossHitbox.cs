@@ -29,10 +29,10 @@ public class BossHitbox : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Only react to bullets
-//        Debug.Log("[BossHitbox] Trigger with: " + other.name + " (tag: " + other.tag + ")");
+        Debug.Log("[BossHitbox] Trigger with: " + other.name + " (tag: " + other.tag + ")");
         if (!other.CompareTag("Bullet")) return;
 
-//        Debug.Log("[BossHitbox] Bullet collision registered");
+        Debug.Log("[BossHitbox] Bullet collision registered");
 
         if (recentlyHit) return;
 
@@ -54,7 +54,7 @@ public class BossHitbox : MonoBehaviour
     {
         yield return new WaitForSeconds(hitCooldown);
         recentlyHit = false;
-//        Debug.Log("[BossHitbox] Hit cooldown reset");
+        Debug.Log("[BossHitbox] Hit cooldown reset");
     }
 
     private void ApplyKnockback(Transform bullet)
@@ -62,7 +62,7 @@ public class BossHitbox : MonoBehaviour
         Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
         if (rb == null)
         {
-//            Debug.LogWarning("[BossHitbox] No Rigidbody on boss!");
+            Debug.LogWarning("[BossHitbox] No Rigidbody on boss!");
             return;
         }
 
@@ -71,14 +71,14 @@ public class BossHitbox : MonoBehaviour
 
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
 
-//        Debug.Log("[BossHitbox] Knockback applied");
+        Debug.Log("[BossHitbox] Knockback applied");
     }
 
     private void ApplyDamage(int damage)
     {
         bool wasDead = parentZombie.IsDead();
 
-//        Debug.Log($"[BossHitbox] Hit registered on {(isHead ? "HEAD" : "BODY")} (Damage: {damage})");
+        Debug.Log($"[BossHitbox] Hit registered on {(isHead ? "HEAD" : "BODY")} (Damage: {damage})");
 
         parentZombie.TakeDamage(damage);
 
@@ -88,13 +88,13 @@ public class BossHitbox : MonoBehaviour
 
         if (parentZombie.IsDead() && !wasDead)
         {
-//            Debug.Log("[BossHitbox] Boss killed — adding kill points");
+            Debug.Log("[BossHitbox] Boss killed — adding kill points");
             ScoreManager.instance.AddPoints(pointsForKill);
             if (zs != null) zs.StopMoan();
         }
         else if (!parentZombie.IsDead())
         {
-//            Debug.Log("[BossHitbox] Boss hit — adding hit points");
+            Debug.Log("[BossHitbox] Boss hit — adding hit points");
             ScoreManager.instance.AddPoints(pointsForHit);
         }
     }
