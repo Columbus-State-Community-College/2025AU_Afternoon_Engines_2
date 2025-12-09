@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public static int currentScore = 0;
 
+    public AudioSource BuySound;
+    public AudioSource BuyFailSound;
+
     void Awake()
     {
         if (instance == null)
@@ -33,12 +36,14 @@ public class ScoreManager : MonoBehaviour
     public bool SpendPoints(int amount)
     {
         if (currentScore >= amount)
-        {
+        {   
+            BuySound.Play();
             currentScore -= amount;
             UpdateUI();
             return true;
         }
 //        Debug.Log("[ScoreManager] Not enough points!");
+        BuyFailSound.Play();
         return false;
     }
 
