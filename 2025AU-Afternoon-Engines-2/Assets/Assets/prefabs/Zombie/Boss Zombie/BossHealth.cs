@@ -66,6 +66,6 @@ public class BossHealth : MonoBehaviour
             anim.SetTrigger("Die");
 
         //  DESPAWN TIME 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.1f);
     }
 }

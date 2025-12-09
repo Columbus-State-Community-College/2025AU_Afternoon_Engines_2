@@ -64,6 +64,6 @@ public class ZombieHealth : MonoBehaviour
             anim.SetTrigger("Die");
 
         //  DESPAWN TIME 
-        Destroy(gameObject, .8f); 
+        Destroy(gameObject, 0.1f); 
     }
 }
