@@ -5,6 +5,7 @@ public class GunPrompt : MonoBehaviour
 {
     public Camera cam;
     public TextMeshProUGUI promptTex;
+    public TextMeshProUGUI ammoTex;
     public GameObject otherGun;
 
     public int cost = 0;
@@ -94,6 +95,7 @@ public class GunPrompt : MonoBehaviour
             GunHandler.hasAR = true;
             GunScriptBase.reserve = 200;
             GunScriptBase.maxReserve = 200;
+            ammoTex.text = 20 + "/" + 200;
         }
         if (gunType == 2) {
             GunHandler.hasBolt = true;
@@ -101,6 +103,7 @@ public class GunPrompt : MonoBehaviour
             GunHandler.hasAR = false;
             GunScriptBase.reserve = 35;
             GunScriptBase.maxReserve = 35;
+            ammoTex.text = 3 + "/" + 35;
         }
     }
 }

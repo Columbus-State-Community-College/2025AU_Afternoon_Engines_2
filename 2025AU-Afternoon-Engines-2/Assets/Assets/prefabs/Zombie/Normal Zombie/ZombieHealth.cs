@@ -11,10 +11,12 @@ public class ZombieHealth : MonoBehaviour
     [HideInInspector] public Wave myWave;
 
     private bool isDead = false;
+    private Animator anim;
 
     void Start()
     {
         currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
 //        Debug.Log($"[ZombieHealth] {gameObject.name} spawned with {maxHealth} HP");
     }
 
@@ -41,27 +43,27 @@ public class ZombieHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        // Disable NavMesh so it stops moving
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        if (agent != null)
-        {
-            agent.enabled = false;
-        }
+        if (agent != null) agent.enabled = false;
 
-        // stop any zombie sounds
+        // Disable colliders so it no longer blocks player or bullets
+        foreach (Collider c in GetComponentsInChildren<Collider>())
+            c.enabled = false;
+
+        // Stop zombie sounds
         ZombieSound zs = GetComponent<ZombieSound>();
-        if (zs != null)
-        {
-            zs.StopMoan();
-        }
+        if (zs != null) zs.StopMoan();
 
+        // Update the wave counter
         if (myWave != null)
-        {
             myWave.enemiesLeft--;
-        }
 
-        // play death SFX if we add one
-        //SoundManager.instance?.PlaySFX("Zombie death SFX name goes here");
+        // Trigger death animation 
+        if (anim != null)
+            anim.SetTrigger("Die");
 
-        Destroy(gameObject, 2f); // delay allows sound to play
+        //  DESPAWN TIME 
+        Destroy(gameObject, .8f); 
     }
 }

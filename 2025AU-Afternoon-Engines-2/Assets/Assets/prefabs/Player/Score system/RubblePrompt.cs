@@ -7,7 +7,7 @@ public class RubblePrompt : MonoBehaviour
     public Camera cam;
     public TextMeshProUGUI promptTex;
 
-    private float inteRange = 3f;
+    public float inteRange = 3f;
     private bool isLookingAway = true;
 
     private InputSystems controls;
