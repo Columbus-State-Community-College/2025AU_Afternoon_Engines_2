@@ -21,6 +21,14 @@ public class popupBlurb : MonoBehaviour
 
     void Update()
     {
+        // if the player presses enter hide text
+        if (popupTimeActive && Input.GetKeyDown(KeyCode.Return))
+        {
+            instructionsUI.SetActive(false);
+            popupTimeActive = false;
+            return;
+        }
+
         // if paused hide the popup
         if (PauseMenu.GameIsPaused)
         {
