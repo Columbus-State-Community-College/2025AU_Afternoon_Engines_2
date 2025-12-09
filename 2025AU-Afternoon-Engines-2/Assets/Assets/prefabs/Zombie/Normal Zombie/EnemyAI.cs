@@ -30,6 +30,9 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = idleSpeed;
 
+        // prevents pushing
+        agent.stoppingDistance = 1.5f;
+
         GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
         if (playerObject != null)
         {
