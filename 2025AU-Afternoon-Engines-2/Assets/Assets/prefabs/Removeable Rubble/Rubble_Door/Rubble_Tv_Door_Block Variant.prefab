@@ -137,16 +137,28 @@ PrefabInstance:
       value: Rubble_Tv_Door_Block Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 38.65075
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 38.65075
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 38.65075
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.103922
+      value: -80.78
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.351
+      value: 41.444
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.8232
+      value: -34.87
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -154,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9178062970508149228, guid: aa3d3fea8439ef24f9f65418385e749f, type: 3}
       propertyPath: m_LocalRotation.y
