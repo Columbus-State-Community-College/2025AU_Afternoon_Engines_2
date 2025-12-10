@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  detectionRange: 500
+  detectionRange: 2000
   chaseSpeed: 3
   idleSpeed: 0
   bounceForce: 2
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558313318b8a79f45a5d634027bcf930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.8
+  attackRange: 1.5
   attackStopDistance: 1.2
-  attackCooldown: 3
+  attackCooldown: 1
   attackDamage: 10
   logInterval: 60
 --- !u!114 &218816596624734755

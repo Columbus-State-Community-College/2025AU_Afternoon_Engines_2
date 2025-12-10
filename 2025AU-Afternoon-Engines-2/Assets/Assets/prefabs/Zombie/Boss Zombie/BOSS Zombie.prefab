@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  detectionRange: 500
+  detectionRange: 2000
   chaseSpeed: 2.1
   idleSpeed: 0
   bounceForce: 2
@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4dc7936c8649d64a9e8e608628f3782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
-  attackStopDistance: 1.2
-  attackCooldown: 3
-  attackDamage: 22
+  attackRange: 3.5
+  attackStopDistance: 3
+  attackCooldown: 2
+  attackDamage: 20
   logInterval: 60
 --- !u!82 &4560792647140205307
 AudioSource:

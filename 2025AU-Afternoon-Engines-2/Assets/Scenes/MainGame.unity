@@ -3142,7 +3142,7 @@ RectTransform:
   m_GameObject: {fileID: 700383773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0354, y: 1.0354, z: 1.0354}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 767711267}
@@ -4987,6 +4987,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039325164}
   m_CullTransparentMesh: 1
+--- !u!1001 &1054190484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.569864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9447271
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.382341
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072345934528426400, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
+      propertyPath: m_Name
+      value: BOSS Zombie
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
 --- !u!1 &1063576043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6577,7 +6634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 619, y: -494}
+  m_AnchoredPosition: {x: 619, y: -499.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286246176
@@ -7218,7 +7275,7 @@ RectTransform:
   m_GameObject: {fileID: 1438900629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0517701, y: 1.0517701, z: 1.0517701}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1015627075}
@@ -11638,3 +11695,4 @@ SceneRoots:
   - {fileID: 1077140857}
   - {fileID: 2007468167}
   - {fileID: 181934901}
+  - {fileID: 1054190484}
