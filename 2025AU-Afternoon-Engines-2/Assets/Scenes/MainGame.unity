@@ -3792,7 +3792,7 @@ MonoBehaviour:
   promptTex: {fileID: 1773116208}
   ammoTex: {fileID: 1666939305}
   otherGun: {fileID: 1648917855}
-  cost: 5000
+  cost: 6000
   gunType: 2
   gunName: Bolt Action Rifle
 --- !u!23 &811091086
@@ -5516,7 +5516,7 @@ MonoBehaviour:
   promptTex: {fileID: 1773116208}
   ammoTex: {fileID: 1666939305}
   otherGun: {fileID: 827497643}
-  cost: 5000
+  cost: 6000
   gunType: 1
   gunName: Assault Rifle
 --- !u!23 &1138549283
