@@ -52,7 +52,7 @@ public class RubblePrompt : MonoBehaviour
             if (interactPressed)
             {
                 // Use ScoreManager for UI update modified by thomas
-                if (ScoreManager.instance.SpendPoints(1000))
+                if (ScoreManager.instance.SpendPoints(1500))
                 {
                     promptTex.gameObject.SetActive(false);
                     parent.SetActive(false);
@@ -81,6 +81,6 @@ public class RubblePrompt : MonoBehaviour
 
     void setText()
     {
-        promptTex.text = "Press E to remove rubble (1000)";
+        promptTex.text = "Press E to remove rubble (1500)";
     }
 }

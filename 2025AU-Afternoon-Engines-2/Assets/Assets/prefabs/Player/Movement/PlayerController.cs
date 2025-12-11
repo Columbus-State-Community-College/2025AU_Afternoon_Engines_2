@@ -167,7 +167,10 @@ public class PlayerController : MonoBehaviour
         if (crouchPressed)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
+
+
+            if (movementState != MovementState.crouching)
+                rb.AddForce(Vector3.down * 2f, ForceMode.Impulse);
         }
         else
         {
@@ -178,7 +181,7 @@ public class PlayerController : MonoBehaviour
     private void StateHandler()
     {
         // mode - crouching
-        if (Input.GetKey(crouchKey))
+        if (crouchPressed)
         {
             movementState = MovementState.crouching;
             moveSpeed = crouchSpeed;

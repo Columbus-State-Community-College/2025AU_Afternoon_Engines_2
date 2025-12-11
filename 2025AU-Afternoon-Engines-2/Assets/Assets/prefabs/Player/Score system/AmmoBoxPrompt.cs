@@ -50,7 +50,7 @@ public class AmmoBoxPrompt : MonoBehaviour
 
             if (interactPressed)
             {                       // modified by thomas
-                if (ScoreManager.instance.SpendPoints(1000))
+                if (ScoreManager.instance.SpendPoints(750))
                 {
                     GunScriptBase.reserve = GunScriptBase.maxReserve;
                     BoltActionRifle.reserve = GunScriptBase.maxReserve;
@@ -89,6 +89,6 @@ public class AmmoBoxPrompt : MonoBehaviour
 
     void setText()
     {
-        promptTex.text = "Press E to Buy Ammo (1000)";
+        promptTex.text = "Press E to Buy Ammo (750)";
     }
 }
