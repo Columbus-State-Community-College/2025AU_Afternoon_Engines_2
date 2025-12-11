@@ -23,7 +23,7 @@ public class BossHitbox : MonoBehaviour
         parentZombie = GetComponentInParent<BossHealth>();
         if (parentZombie == null)
             {} // <----- dont know why there are need but will error with out them
-//            Debug.LogError($"{name} is missing BossHealth in parent");
+            Debug.LogError($"{name} is missing BossHealth in parent");
     }
 
     private void OnTriggerEnter(Collider other)
