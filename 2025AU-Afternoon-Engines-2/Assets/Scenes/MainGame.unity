@@ -21437,6 +21437,10 @@ PrefabInstance:
       propertyPath: ammoTex
       value: 
       objectReference: {fileID: 1666939305}
+    - target: {fileID: 948770963111434118, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1228300428342029311, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: healthBar
       value: 
