@@ -734,8 +734,8 @@ public partial class @InputSystems: IInputActionCollection2, IDisposable
 
     ~@InputSystems()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystems.Player.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystems.UI.Disable() has not been called.");
+//        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystems.Player.Disable() has not been called.");
+//        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystems.UI.Disable() has not been called.");
     }
 
     /// <summary>

@@ -22,7 +22,8 @@ public class ZombieHitbox : MonoBehaviour
     {
         parentZombie = GetComponentInParent<ZombieHealth>();
         if (parentZombie == null)
-            Debug.LogError($"{name} is missing ZombieHealth in parent");
+//            Debug.LogError($"{name} is missing ZombieHealth in parent");
+{} //<----to fix error of the dbug com out 
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -70,7 +71,7 @@ public class ZombieHitbox : MonoBehaviour
 
         // Identify the hitbox for debugging
         string hitboxName = isHead ? "HEAD" : "BODY";
-        Debug.Log($"[ZombieHitbox] Hit registered on {hitboxName} (Damage: {damage})");
+//        Debug.Log($"[ZombieHitbox] Hit registered on {hitboxName} (Damage: {damage})");
 
         // play hit sound
         ZombieSound zs = parentZombie.GetComponent<ZombieSound>();

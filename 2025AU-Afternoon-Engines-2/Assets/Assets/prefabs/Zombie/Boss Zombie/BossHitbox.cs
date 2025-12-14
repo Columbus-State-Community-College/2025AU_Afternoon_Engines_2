@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
 
 public class BossHitbox : MonoBehaviour
@@ -22,18 +21,14 @@ public class BossHitbox : MonoBehaviour
     {
         parentZombie = GetComponentInParent<BossHealth>();
         if (parentZombie == null)
-            {} // <----- dont know why there are need but will error with out them
-            Debug.LogError($"{name} is missing BossHealth in parent");
+        {
+//            Debug.LogError($"{name} is missing BossHealth in parent!");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Only react to bullets
-        Debug.Log("[BossHitbox] Trigger with: " + other.name + " (tag: " + other.tag + ")");
         if (!other.CompareTag("Bullet")) return;
-
-        Debug.Log("[BossHitbox] Bullet collision registered");
-
         if (recentlyHit) return;
 
         recentlyHit = true;
@@ -42,11 +37,10 @@ public class BossHitbox : MonoBehaviour
         Bullet bullet = other.GetComponent<Bullet>();
         int damageAmount = bullet != null ? (int)bullet.damage : 20;
 
+//        Debug.Log($"[BossHitbox] {(isHead ? "HEADSHOT" : "BODYSHOT")} for {damageAmount} dmg");
+
         ApplyDamage(damageAmount);
-        ApplyKnockback(other.transform);
-
-
-        // Destroy the bullet here
+        ApplyKnockback();
         Destroy(other.gameObject);
     }
 
@@ -54,47 +48,31 @@ public class BossHitbox : MonoBehaviour
     {
         yield return new WaitForSeconds(hitCooldown);
         recentlyHit = false;
-        Debug.Log("[BossHitbox] Hit cooldown reset");
     }
 
-    private void ApplyKnockback(Transform bullet)
+    private void ApplyKnockback()
     {
         Rigidbody rb = parentZombie.GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            Debug.LogWarning("[BossHitbox] No Rigidbody on boss!");
-            return;
-        }
+        if (rb == null) return;
 
-        Vector3 direction = (parentZombie.transform.position - bullet.position).normalized;
-        direction.y = 0;
-
-        rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
-
-        Debug.Log("[BossHitbox] Knockback applied");
+        rb.AddForce(Vector3.back * knockbackForce, ForceMode.Impulse);
     }
 
     private void ApplyDamage(int damage)
     {
         bool wasDead = parentZombie.IsDead();
-
-        Debug.Log($"[BossHitbox] Hit registered on {(isHead ? "HEAD" : "BODY")} (Damage: {damage})");
-
         parentZombie.TakeDamage(damage);
 
-        // Use the boss sound script, not the normal zombie one
         BossZombieSound zs = parentZombie.GetComponent<BossZombieSound>();
         if (zs != null) zs.PlayHitSound();
 
         if (parentZombie.IsDead() && !wasDead)
         {
-            Debug.Log("[BossHitbox] Boss killed — adding kill points");
             ScoreManager.instance.AddPoints(pointsForKill);
             if (zs != null) zs.StopMoan();
         }
         else if (!parentZombie.IsDead())
         {
-            Debug.Log("[BossHitbox] Boss hit — adding hit points");
             ScoreManager.instance.AddPoints(pointsForHit);
         }
     }
