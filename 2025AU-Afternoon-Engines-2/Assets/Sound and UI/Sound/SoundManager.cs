@@ -31,12 +31,17 @@ public class SoundManager : MonoBehaviour
         }
 
         instance = this;
+
+        // CRITICAL FOR WIN / LOSE SOUNDS
+        if (sfxSource != null)
+            sfxSource.ignoreListenerPause = true;
+
         UpdateVolume();
     }
 
     public void PlaySFX(string name)
     {
-        if (muteSFX) return;
+        if (muteSFX || sfxSource == null) return;
 
         AudioClip clip = GetClip(name);
         if (clip == null) return;
@@ -71,6 +76,7 @@ public class SoundManager : MonoBehaviour
 
     private void UpdateVolume()
     {
-        sfxSource.volume = muteSFX ? 0 : sfxVolume;
+        if (sfxSource != null)
+            sfxSource.volume = muteSFX ? 0 : sfxVolume;
     }
 }

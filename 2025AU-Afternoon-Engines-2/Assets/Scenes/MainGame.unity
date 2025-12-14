@@ -12722,63 +12722,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4502883737245915616, guid: 6bdfbbd6931543d4faf6737ab1e1eeee, type: 3}
   m_PrefabInstance: {fileID: 1528449818026334187}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1255341732
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.331305
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.652
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.375794
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276741238221300100, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6072345934528426400, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
-      propertyPath: m_Name
-      value: BOSS Zombie
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11b2dce3490e3ad489a358610cb0bddf, type: 3}
 --- !u!1 &1256566673
 GameObject:
   m_ObjectHideFlags: 0
@@ -19392,6 +19335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1690724583}
     m_Modifications:
+    - target: {fileID: 1295446982288056470, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: loseSFX
+      value: Siren
+      objectReference: {fileID: 0}
     - target: {fileID: 3532498137628664842, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_Name
       value: sound system
@@ -19447,7 +19394,7 @@ PrefabInstance:
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[17].clip
       value: 
-      objectReference: {fileID: 8300000, guid: dfe8eca2df552f143b5a9e929c4d0679, type: 3}
+      objectReference: {fileID: 8300000, guid: 4947c00338e58e74f8c5a23f06654294, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[17].name
       value: ObjectBuyFail1
@@ -21473,7 +21420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831554190608935550, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893623589578307246, guid: 52aa2a39eef7dfb4599d9cc49aa53235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22161,4 +22108,3 @@ SceneRoots:
   - {fileID: 1690724583}
   - {fileID: 338645984}
   - {fileID: 2047490357}
-  - {fileID: 1255341732}

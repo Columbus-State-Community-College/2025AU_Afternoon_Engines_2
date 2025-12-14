@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private float maxHealth = 100;
 
     [Header("Damage Settings")] 
-    public float meleeDamage = 34f; // editable in Inspector 
+    public float meleeDamage = 34f; // editable in Inspector
     public float hitDamageMultiplier = 1f; // optional balancing multiplier 
 
     public TextMeshProUGUI healthTex;
@@ -43,12 +43,9 @@ public class PlayerHealth : MonoBehaviour
         setHealthUI();
     }
 
-    // ======================================================
-    // NEW/working DAMAGE SYSTEM — USED BY ZombieAttack & BossAttack we had 2 at the saym time
     public void PlayerDamage(float amount)
     {
         float finalDamage = amount * hitDamageMultiplier;
-
 //        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called");
 
         if (playerHealth > 0 && iframes <= 0)
@@ -56,57 +53,9 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= finalDamage;
             regenTime = 6f;
             iframes = 0.8f;
-
-//            Debug.Log("[PlayerHealth] Took " + finalDamage + " damage — Health now: " + playerHealth);
-            setHealthUI();
-        }
-        else
-        {
-//            Debug.Log("[PlayerHealth] Damage ignored (iFrames active)");
-        }
-    }
-
-    // ====================================================================
-    //  OLD DAMAGE SYSTEM — TRIGGER-BASED MELEE DAMAGE (NOW DISABLED)
-    //  This existed before ZombieAttack/BossAttack scripts handled attacks.
-    /*
-    public void PlayerDamage() {
-        if (playerHealth > 0 && iframes <= 0) {
-
-            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage);
-
-            playerHealth -= meleeDamage; // editable in Inspector
-            regenTime = 4f;
-            iframes = 0.8f;
-            setHealthUI();
-        }  
-    }
-
-    private void PlayerDamage_Internal() // added by Thomas
-    {
-        if (playerHealth > 0 && iframes <= 0)
-        {
-            Debug.Log("[PlayerHealth] Melee trigger hit — damage: " + meleeDamage);
-
-            playerHealth -= meleeDamage; // editable in Inspector
-            regenTime = 4f;
-            iframes = 0.8f;
-
             setHealthUI();
         }
     }
-
-    private void OnTriggerStay(Collider other) {
-    Debug.Log("[PlayerHealth] OnTriggerStay detected with: " + other.name);// added by Thomas for testing
-
-        if (other.gameObject.CompareTag("Enemy") && iframes <= 0) {
-        Debug.Log("[PlayerHealth] Attempting melee damage (OLD SYSTEM)"); // added by Thomas for testing
-            PlayerDamage_Internal(); // uses meleeDamage
-        }
-    }
-    */
-    // END OF OLD DAMAGE SYSTEM (now disabled)
-    // ======================================================
 
     private void tick() {
         if (regenTime > 0)
@@ -114,8 +63,12 @@ public class PlayerHealth : MonoBehaviour
         if (iframes > 0)
             iframes -= Time.deltaTime;
         if (playerHealth <= 0) {
+            // LOSE SOUND TRIGGER ADD BY THOMAS
+            FindFirstObjectByType<GameOutcomeSound>()?.PlayLose();
+
+
             playerHealth = 0;
-//            Debug.Log("[PlayerHealth] PLAYER DIED!"); // added by Thomas for testing
+//            Debug.Log("[PlayerHealth] PLAYER DIED!");
             gun.SetActive(false);
             parent.SetActive(false);
 

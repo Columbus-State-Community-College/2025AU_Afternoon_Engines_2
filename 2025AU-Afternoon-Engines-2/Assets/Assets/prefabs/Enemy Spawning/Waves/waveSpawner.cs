@@ -135,6 +135,10 @@ public class waveSpawner : MonoBehaviour
 
         if (currentWaveIndex >= waves.Length)
         {
+            // WIN SOUND TRIGGER ADD BY THOMAS
+            FindFirstObjectByType<GameOutcomeSound>()?.PlayWin();
+
+
             if (winScreen != null)
                 winScreen.SetActive(true);
 
