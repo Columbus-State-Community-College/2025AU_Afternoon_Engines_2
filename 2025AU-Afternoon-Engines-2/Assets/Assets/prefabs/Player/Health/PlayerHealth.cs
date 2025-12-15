@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         setHealthUI();
     }
 
-    // Update is called once per frame
+// Update is called once per frame
     void Update()
     {
         if (regenTime <= 0f && playerHealth > 0 && playerHealth < maxHealth * PerkChecker.HealthPerkMult) {
@@ -63,9 +63,10 @@ public class PlayerHealth : MonoBehaviour
         if (iframes > 0)
             iframes -= Time.deltaTime;
         if (playerHealth <= 0) {
-            // LOSE SOUND TRIGGER ADD BY THOMAS
+            // LOSE SOUND TRIGGER (added by Thomas)
             FindFirstObjectByType<GameOutcomeSound>()?.PlayLose();
-
+            // SILENCE ALL GAMEPLAY AUDIO, except outcome sound only added by Thomas
+            AudioListener.pause = true;
 
             playerHealth = 0;
 //            Debug.Log("[PlayerHealth] PLAYER DIED!");

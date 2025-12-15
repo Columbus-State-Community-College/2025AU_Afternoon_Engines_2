@@ -1,58 +1,79 @@
 using UnityEngine;
+using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameOutcomeSound : MonoBehaviour
 {
+    private bool hasPlayed = false;
+    private AudioSource outcomeSource;
+
     [Header("SFX Keys (SoundManager Library Names)")]
     public string winSFX;
     public string loseSFX;
 
-    [Header("Local Volume Multipliers")]
-    [Range(0f, 3f)] public float winVolume = 1f;
-    [Range(0f, 3f)] public float loseVolume = 1f;
-
-    private SoundManager soundManager;
-    private bool played = false;
-
-private void Start()
-{
-    Debug.Log("[GameOutcomeSound] Start — testing lose SFX");
-    PlayLose();
-}
-
-
+    [Header("Local Volume Multiplier")]
+    [Range(0f, 3f)] public float outcomeVolume = 1f;
 
     private void Awake()
     {
-        soundManager = SoundManager.instance;
+        outcomeSource = GetComponent<AudioSource>();
+
+        outcomeSource.playOnAwake = false;
+        outcomeSource.loop = false;
+        outcomeSource.spatialBlend = 0f;
+        outcomeSource.ignoreListenerPause = true;
+
+        if (SoundManager.instance != null && SoundManager.instance.sfxSource != null)
+        {
+            outcomeSource.outputAudioMixerGroup =
+                SoundManager.instance.sfxSource.outputAudioMixerGroup;
+        }
     }
+
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.K))
+    {
+        Debug.Log("[GameOutcomeSound] Manual siren test");
+        StartCoroutine(PlayOutcomeDelayed(loseSFX));
+    }
+}
+
 
     public void PlayWin()
     {
-        if (played) return;
-        played = true;
+        if (hasPlayed) return;
+        hasPlayed = true;
 
-        PlaySFX(winSFX, winVolume);
+        StartCoroutine(PlayOutcomeDelayed(winSFX));
     }
 
     public void PlayLose()
     {
-        if (played) return;
-        played = true;
+        if (hasPlayed) return;
+        hasPlayed = true;
 
-        PlaySFX(loseSFX, loseVolume);
+        StartCoroutine(PlayOutcomeDelayed(loseSFX));
     }
 
-    private void PlaySFX(string sfxName, float localVolume)
+    private IEnumerator PlayOutcomeDelayed(string sfxName)
     {
-        if (soundManager == null) return;
-        if (string.IsNullOrEmpty(sfxName)) return;
+        yield return new WaitForSecondsRealtime(0.05f);
 
-        var item = soundManager.sfxClips.Find(s => s.name == sfxName);
-        if (item == null || item.clip == null) return;
+        if (SoundManager.instance == null)
+        {
+            Debug.LogWarning("[GameOutcomeSound] SoundManager missing");
+            yield break;
+        }
 
-        float finalVol = soundManager.sfxVolume * localVolume;
-        finalVol = Mathf.Clamp(finalVol, 0f, 3f);
+        AudioClip clip = SoundManager.instance.GetClipInternal(sfxName);
+        if (clip == null)
+        {
+            Debug.LogWarning("[GameOutcomeSound] Missing outcome SFX: " + sfxName);
+            yield break;
+        }
 
-        soundManager.sfxSource.PlayOneShot(item.clip, finalVol);
+        float finalVolume = outcomeVolume * SoundManager.instance.sfxVolume;
+        outcomeSource.PlayOneShot(clip, finalVolume);
     }
 }

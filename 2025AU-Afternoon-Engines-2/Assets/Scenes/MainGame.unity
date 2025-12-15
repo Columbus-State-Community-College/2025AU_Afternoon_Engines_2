@@ -2100,11 +2100,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!4 &203045438 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-  m_PrefabInstance: {fileID: 2032725269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &210379377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4502883737245915616, guid: 6bdfbbd6931543d4faf6737ab1e1eeee, type: 3}
@@ -9984,7 +9979,6 @@ GameObject:
   - component: {fileID: 1138549283}
   - component: {fileID: 1138549281}
   - component: {fileID: 1138549286}
-  - component: {fileID: 1138549285}
   m_Layer: 0
   m_Name: GunPrompt
   m_TagString: Untagged
@@ -10079,18 +10073,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138549279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1138549285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138549279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56226a6f229e4364b947e40d49768f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1138549286
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15400,7 +15382,6 @@ Transform:
   - {fileID: 1844068152}
   - {fileID: 1706779183}
   - {fileID: 143844945}
-  - {fileID: 203045438}
   - {fileID: 163686848}
   - {fileID: 2038874846}
   - {fileID: 139969275}
@@ -17794,7 +17775,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1690724583}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1295446982288056470, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: loseSFX
@@ -17862,15 +17843,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1054.4563
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -683.4866
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.8772135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17898,6 +17879,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: MaxDistance
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423840417222796570, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: winSFX
+      value: ObjectBuy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423840417222796570, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: loseSFX
+      value: PlayerScream
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920435273110615797, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20183,6 +20192,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1571368394}
   - {fileID: 1562835612}
+  - {fileID: 2032725269}
   - {fileID: 1690724583}
   - {fileID: 338645984}
   - {fileID: 2047490357}

@@ -111,7 +111,7 @@ public class waveSpawner : MonoBehaviour
                 bh.waveSpawner = this;
                 bh.myWave = currentWave;
             }
-
+            
             // play zombie sound
             ZombieSound zs = newEnemy.GetComponent<ZombieSound>();
             if (zs != null)
@@ -135,9 +135,11 @@ public class waveSpawner : MonoBehaviour
 
         if (currentWaveIndex >= waves.Length)
         {
-            // WIN SOUND TRIGGER ADD BY THOMAS
+            // WIN SOUND TRIGGER (added by Thomas)
             FindFirstObjectByType<GameOutcomeSound>()?.PlayWin();
 
+            // SILENCE ALL GAMEPLAY AUDIO, except outcome sound only added by Thomas
+            AudioListener.pause = true;
 
             if (winScreen != null)
                 winScreen.SetActive(true);

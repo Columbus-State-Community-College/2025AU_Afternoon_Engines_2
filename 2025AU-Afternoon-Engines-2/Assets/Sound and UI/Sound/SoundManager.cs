@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
     [Header("Audio Source")]
-    public AudioSource sfxSource;     // ONE source for all SFX
+    public AudioSource sfxSource;     // ONE source for all normal SFX
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float sfxVolume = 1f;
@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
 
         instance = this;
 
-        // CRITICAL FOR WIN / LOSE SOUNDS
+        // CRITICAL: allow SFX to play during pause
         if (sfxSource != null)
             sfxSource.ignoreListenerPause = true;
 
@@ -43,13 +43,14 @@ public class SoundManager : MonoBehaviour
     {
         if (muteSFX || sfxSource == null) return;
 
-        AudioClip clip = GetClip(name);
+        AudioClip clip = GetClipInternal(name);
         if (clip == null) return;
 
         sfxSource.PlayOneShot(clip, sfxVolume);
     }
 
-    private AudioClip GetClip(string name)
+    // Used by GameOutcomeSound
+    public AudioClip GetClipInternal(string name)
     {
         SoundItem item = sfxClips.Find(s => s.name == name);
 
