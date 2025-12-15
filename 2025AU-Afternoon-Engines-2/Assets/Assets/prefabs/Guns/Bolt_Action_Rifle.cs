@@ -8,8 +8,8 @@ public class BoltActionRifle : MonoBehaviour
     public Rigidbody bullet;
     public float magazine = 3; // How much ammo the magazine starts with.
     public float magazineSize = 3; // The maximum amount of ammo that can be reloaded into the gun
-    public static float reserve = 50; // The ammo that gets reloaded from the gun.
-    public static float maxReserve = 50;
+    public static float reserve = 65; // The ammo that gets reloaded from the gun.
+    public static float maxReserve = 65;
 
     public static bool isReloading = false; 
     public float reloadTime = 3f; 
