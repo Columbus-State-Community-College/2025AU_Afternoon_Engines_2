@@ -14,6 +14,10 @@ public class DrinkBehavior : MonoBehaviour
 
     public TextMeshProUGUI promptTex;
 
+    public Transform Pistol;
+    public Transform assaultRifle;
+    public Transform boltActionRifle;
+
     private float drinkDuration = 3f;
     public static bool isDrinking = false;
     // NEW — soda sound script
@@ -74,8 +78,21 @@ public class DrinkBehavior : MonoBehaviour
         reloadSoda.SetActive(false);
 
         isDrinking = false;
+
+        if (GunScriptBase.isReloading || AssaultRifle.isReloading || BoltActionRifle.isReloading && GunHandler.hasPistol) {
+            Pistol.Rotate(45f, 0f, 0f, Space.Self);
+        }
+        if (GunScriptBase.isReloading || AssaultRifle.isReloading || BoltActionRifle.isReloading && GunHandler.hasAR) {
+            assaultRifle.Rotate(45f, 0f, 0f, Space.Self);
+        }
+        if (GunScriptBase.isReloading || AssaultRifle.isReloading || BoltActionRifle.isReloading && GunHandler.hasBolt) {
+            boltActionRifle.Rotate(45f, 0f, 0f, Space.Self);
+        }
+        
         GunScriptBase.isReloading = false;
         AssaultRifle.isReloading = false;
         BoltActionRifle.isReloading = false;
+
+        
     }
 }

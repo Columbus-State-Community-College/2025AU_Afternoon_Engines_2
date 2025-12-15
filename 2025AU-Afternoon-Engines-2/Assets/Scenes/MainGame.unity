@@ -6736,6 +6736,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700383773}
   m_CullTransparentMesh: 1
+--- !u!4 &702041079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7749073282080806236, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+  m_PrefabInstance: {fileID: 8013887764852464530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &708065384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1596144967880368485, guid: 9c8d36c14215bec48bfebe8903a35324, type: 3}
@@ -11859,6 +11864,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!4 &1174618533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3683121980143073607, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+  m_PrefabInstance: {fileID: 8013887764852464530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1183347876
 GameObject:
   m_ObjectHideFlags: 0
@@ -11980,6 +11990,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!4 &1184703175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 713681588972908431, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+  m_PrefabInstance: {fileID: 8013887764852464530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209421034
 GameObject:
   m_ObjectHideFlags: 0
@@ -21971,6 +21986,10 @@ PrefabInstance:
       value: Character Controller
       objectReference: {fileID: 0}
     - target: {fileID: 8268778694464261083, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: Pistol
+      value: 
+      objectReference: {fileID: 1174618533}
+    - target: {fileID: 8268778694464261083, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: pMachine
       value: 
       objectReference: {fileID: 730744405928632727}
@@ -21978,6 +21997,14 @@ PrefabInstance:
       propertyPath: promptTex
       value: 
       objectReference: {fileID: 1153502109}
+    - target: {fileID: 8268778694464261083, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: assaultRifle
+      value: 
+      objectReference: {fileID: 702041079}
+    - target: {fileID: 8268778694464261083, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
+      propertyPath: boltActionRifle
+      value: 
+      objectReference: {fileID: 1184703175}
     - target: {fileID: 8508667926918522470, guid: a22ec07f50cb68843a50d160dfa9475e, type: 3}
       propertyPath: ammoTex
       value: 
