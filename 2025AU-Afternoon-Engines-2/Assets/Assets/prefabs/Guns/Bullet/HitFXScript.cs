@@ -4,7 +4,7 @@ using UnityEngine.VFX;
 public class GroundHitFXScript : MonoBehaviour
 {
     public VisualEffect vfx;
-    private float lifeTime = 0.5f;
+    private float lifeTime = 1f;
     
     void Start()
     {
