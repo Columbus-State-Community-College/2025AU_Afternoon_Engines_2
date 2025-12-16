@@ -62,6 +62,7 @@ public class BoltActionRifle : MonoBehaviour
 
     void Update()
     {
+        SetText();
         if (PauseMenu.GameIsPaused || Time.unscaledTime - PauseMenu.lastUnpauseTime < 0.1f)
             return;
 
