@@ -45,7 +45,7 @@ VisualEffect:
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 777532508
-  m_ResetSeedOnPlay: 0
+  m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
@@ -57,7 +57,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0, y: 0, z: 0, w: 0}
+      - m_Value: {x: 0.0754717, y: 0.0754717, z: 0.0754717, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -72,10 +72,10 @@ VisualEffect:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
-            time: 1.0156438
-            value: 1.1254131
-            inSlope: -0.20978077
-            outSlope: -0.20978077
+            time: 1.0213926
+            value: 0.70410645
+            inSlope: 1.5781889
+            outSlope: 1.5781889
             tangentMode: 34
             weightedMode: 0
             inWeight: 0.33333334
@@ -116,8 +116,8 @@ VisualEffect:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 2.0343988
-            value: 4.7768407
+            time: 1.3846185
+            value: 3.3009267
             inSlope: -4.0742116
             outSlope: -4.0742116
             tangentMode: 0
@@ -165,7 +165,7 @@ VFXRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 254
   m_RendererPriority: 0
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -18289,46 +18289,150 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.size
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cbd082016d6b541418cce46f6439f7d6, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[1].name
+      value: WinSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9afd1f1e84635a5428557a5b37ede9a7, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[2].name
+      value: PlayerScream
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e7aec96c4890e6e4dadfd94d3026e0e8, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[3].name
+      value: Zombie1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9edc72cf76a7ba942b093ee2c00573c5, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[4].name
+      value: Zombie2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b228a36157924f741ae0248fe709b6de, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[5].name
+      value: Zombie3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8be5a0abeae77754d9cfa881910b4d3a, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[6].name
+      value: FootStepsMetal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e9f6b282ad11cc34b8eb081e3b1cf732, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[7].name
+      value: FootStepsFast
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1554a39c4c482cf4288228abdfd78c3a, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[8].name
+      value: FootStepsConcrete/Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8adbf3e3480a92845b52be1d0f696ec2, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[9].name
+      value: FootStepsSlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bc33dfafb47b804f944c44fdcbc32a8, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[10].name
       value: soda_drink
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[10].name
+      propertyPath: sfxClips.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b951270549df0d74a8118df52dd264c3, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[11].name
       value: soda_drop
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ef8802d8b6692f4d99cce6ef0916bd4, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[12].name
+      value: soda_open
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: aa22bf773474e8642887320f3147c122, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[13].name
       value: reload 1
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
-      propertyPath: sfxClips.Array.data[13].name
+      propertyPath: sfxClips.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 96c28d9054fc9474dae17efbe4658140, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[14].name
       value: gunshotempty 1
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[15].clip
       value: 
-      objectReference: {fileID: 8300000, guid: b838577c3140e674fb0bb460322c62a7, type: 3}
+      objectReference: {fileID: 8300000, guid: c62fa4d014eef0141879a87e65ec1aa8, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[15].name
-      value: gunshot 2
+      value: gunshort 1
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[16].clip
       value: 
-      objectReference: {fileID: 8300000, guid: dfe8eca2df552f143b5a9e929c4d0679, type: 3}
+      objectReference: {fileID: 8300000, guid: b838577c3140e674fb0bb460322c62a7, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[16].name
-      value: ObjectBuy1
+      value: gunshot 2
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[17].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 4947c00338e58e74f8c5a23f06654294, type: 3}
+      objectReference: {fileID: 8300000, guid: dfe8eca2df552f143b5a9e929c4d0679, type: 3}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.data[17].name
+      value: ObjectBuy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[18].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4947c00338e58e74f8c5a23f06654294, type: 3}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxClips.Array.data[18].name
       value: ObjectBuyFail1
       objectReference: {fileID: 0}
     - target: {fileID: 4936615664934455591, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
@@ -18389,11 +18493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7423840417222796570, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: winSFX
-      value: ObjectBuy1
+      value: WinSound
       objectReference: {fileID: 0}
     - target: {fileID: 7423840417222796570, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: loseSFX
       value: PlayerScream
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423840417222796570, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: outcomeVolume
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8920435273110615797, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_PlayOnAwake
