@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100 * PerkChecker.HealthPerkMult;
     public GameObject gun;
     public GameObject parent;
+    public AudioSource hurtSound;
     private float regenTime = 4f;
     private float iframes = 0.8f;
     private float maxHealth = 100;
@@ -49,7 +50,8 @@ public class PlayerHealth : MonoBehaviour
 //        Debug.Log("[PlayerHealth] PlayerDamage(" + finalDamage + ") called");
 
         if (playerHealth > 0 && iframes <= 0)
-        {
+        {   
+            hurtSound.Play();
             playerHealth -= finalDamage;
             regenTime = 6f;
             iframes = 0.8f;
