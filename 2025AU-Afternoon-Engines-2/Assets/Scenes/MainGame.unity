@@ -19141,9 +19141,17 @@ PrefabInstance:
       propertyPath: loseSFX
       value: Siren
       objectReference: {fileID: 0}
+    - target: {fileID: 1714569236214847267, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3532498137628664842, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_Name
       value: sound system
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: musicVolume
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.size
@@ -19156,6 +19164,10 @@ PrefabInstance:
     - target: {fileID: 4020334539627992167, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: musicTracks.Array.data[17].name
       value: Maybe3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
+      propertyPath: sfxVolume
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4420783961573591196, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: sfxClips.Array.size
@@ -19347,7 +19359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5718552470879087026, guid: 1420873c317ebaa49afe005650f903c6, type: 3}
       propertyPath: MaxDistance
