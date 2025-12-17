@@ -17,6 +17,7 @@ public class TrashPrompt : MonoBehaviour
     void Start()
     {
         setText();
+        cooldown = 30f;
     }
 
     private void Awake()
@@ -54,7 +55,7 @@ public class TrashPrompt : MonoBehaviour
                 // Use ScoreManager for UI update modified by thomas
                 if (cooldown <= 0f)
                 {
-                    cooldown = 25f;
+                    cooldown = 120f;
                     GunScriptBase.reserve += 9;
                     AssaultRifle.reserve += 15;
                     BoltActionRifle.reserve += 6;
